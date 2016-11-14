@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="firstpage" title="主页面" onReady="testViewReady" context="touch">
+	<form name="form-firstpage" method="post" horizontal="true"
+		action="/form/ajaxsubmit" layoutconstraint="md:10;sm:10;md-offset:2;sm-offset:2">
+		<form-body>
+			<form-group sizing="large">
+				<bunch layoutconstraint="md-offset:4;sm-offset:4">
+					<bunch layoutconstraint="md:12">
+						<label for="zw1" layoutconstraint="md:2" />
+					</bunch>
+					<bunch layoutconstraint="md:12">
+						<label for="zw2" layoutconstraint="md:2" />
+					</bunch>
+					<bunch layoutconstraint="md:12">
+						<label for="zw3" layoutconstraint="md:2" />
+					</bunch>
+					<bunch layoutconstraint="md:12">
+						<label for="zw4" layoutconstraint="md:2" />
+					</bunch>
+					<bunch layoutconstraint="md:12">
+						<label for="zw5" layoutconstraint="md:2" />
+					</bunch>
+					<bunch layoutconstraint="md:12">
+						<label for="zw6" layoutconstraint="md:2" />
+					</bunch>
+					<bunch layoutconstraint="md:12">
+						<label for="zw7" layoutconstraint="md:2" />
+					</bunch>
+					<bunch layoutconstraint="md:12">
+						<label for="zw8" layoutconstraint="md:2" />
+					</bunch>
+				</bunch>
+			</form-group>
+
+
+
+			<form-group>
+				<image name="image_wlsd" popshow="false" onClick="wlsd"></image>
+				<hidden name="hiddenwlsd" bind="pics.picWlsd"></hidden>
+
+				<image name="image_wljs" popshow="false" onClick="wljs"></image>
+				<hidden name="hiddenwljs" bind="pics.picWljs"></hidden>
+
+				<image name="image_gzsd" popshow="false" onClick="gzsd"></image>
+				<hidden name="hiddengzsd" bind="pics.picGzsd"></hidden>
+
+				<image name="image_gzjs" popshow="false" onClick="gzjs"></image>
+				<hidden name="hiddengzjs" bind="pics.picGzjs"></hidden>
+			</form-group>
+			<form-group sizing="large">
+				<bunch layoutconstraint="md-offset:4;sm-offset:4">
+					<bunch layoutconstraint="md:12">
+						<label for="zw1" layoutconstraint="md:2" />
+					</bunch>
+					<bunch layoutconstraint="md:12">
+						<label for="zw2" layoutconstraint="md:2" />
+					</bunch>
+					<bunch layoutconstraint="md:12">
+						<label for="zw3" layoutconstraint="md:2" />
+					</bunch>
+					<bunch layoutconstraint="md:12">
+						<label for="zw4" layoutconstraint="md:2" />
+					</bunch>
+				</bunch>
+			</form-group>
+			<form-group>
+				<image name="image_bkg" popshow="false" onClick="bkg"></image>
+				<hidden name="hiddenbkg" bind="pics.picBkg"></hidden>
+
+				<image name="image_bg" popshow="false" onClick="bg"></image>
+				<hidden name="hiddenbg" bind="pics.picBg"></hidden>
+			</form-group>
+			<form-group sizing="large">
+				<bunch layoutconstraint="md-offset:4;sm-offset:4">
+					<bunch layoutconstraint="md:12">
+						<label for="zw1" layoutconstraint="md:2" />
+					</bunch>
+					<bunch layoutconstraint="md:12">
+						<label for="zw2" layoutconstraint="md:2" />
+					</bunch>
+					<bunch layoutconstraint="md:12">
+						<label for="zw3" layoutconstraint="md:2" />
+					</bunch>
+					<bunch layoutconstraint="md:12">
+						<label for="zw4" layoutconstraint="md:2" />
+					</bunch>
+				</bunch>
+			</form-group>
+			<form-group>
+				<image name="image_qlbj" popshow="false" onClick="qlbj"></image>
+				<hidden name="hiddenqlbj" bind="pics.picQlbj"></hidden>
+
+				<image name="image_sbgz" popshow="false" onClick="sbgz"></image>
+				<hidden name="hiddensbgz" bind="pics.picSbgz"></hidden>
+
+				<image name="image_gzbj" popshow="false" onClick="gzbj"></image>
+				<hidden name="hiddengzbj" bind="pics.picGzbj"></hidden>
+			</form-group>
+		</form-body>
+	</form>
+	<attribute name="javascript">
+		<![CDATA[
+		function testViewReady(){
+			hiddenwlsd = $('#hiddenwlsd').val(); 
+			$("#image_wlsd").attr("src", hiddenwlsd); 
+			
+			hiddenwljs = $('#hiddenwljs').val(); 
+			$("#image_wljs").attr("src", hiddenwljs); 
+			
+			hiddengzsd = $('#hiddengzsd').val(); 
+			$("#image_gzsd").attr("src", hiddengzsd); 
+			
+			hiddengzjs = $('#hiddengzjs').val(); 
+			$("#image_gzjs").attr("src", hiddengzjs); 
+			
+			hiddenbkg = $('#hiddenbkg').val(); 
+			$("#image_bkg").attr("src", hiddenbkg); 
+			
+			hiddenckgy = $('#hiddenckgy').val(); 
+			$("#image_ckgy").attr("src", hiddenckgy); 
+			
+			hiddenbg = $('#hiddenbg').val(); 
+			$("#image_bg").attr("src", hiddenbg); 
+			
+			hiddenqlbj = $('#hiddenqlbj').val(); 
+			$("#image_qlbj").attr("src", hiddenqlbj); 
+			
+			hiddensbgz = $('#hiddensbgz').val(); 
+			$("#image_sbgz").attr("src", hiddensbgz); 
+			
+			hiddengzbj = $('#hiddengzbj').val(); 
+			$("#image_gzbj").attr("src", hiddengzbj); 
+		}
+		
+		function wlsd() {
+			var url =  ui.getRealUrl("/sbgzbjac/getWlsd");	//物料送达
+			window.location.href= url;
+		}
+		function wljs() {
+			var url =  ui.getRealUrl("/sbgzbjac/getWljs");	//物料接收
+			window.location.href= url;
+		}
+		function gzsd() {
+			var url =  ui.getRealUrl("/sbgzbjac/getGzsd");	//工装送达
+			window.location.href= url;
+		}
+		function gzjs() {
+			var url =  ui.getRealUrl("/sbgzbjac/getGzjs");	//工装接收
+			window.location.href= url;
+		}
+		function bkg() {
+			var url =  ui.getRealUrl("/sbgzbjac/getBkg");	//报开工
+			window.location.href= url;
+		}
+		function ckgy() {
+			var url =  ui.getRealUrl("/sbgzbjac/getCkgy");	//查看工艺
+			window.location.href= url;
+		}
+		function bg() {
+			var url =  ui.getRealUrl("/sbgzbjac/getBg");	//报工
+			window.location.href= url;
+		}
+		function qlbj() {
+			var url =  ui.getRealUrl("/sbgzbjac/getQlbj");	//缺料报警
+			window.location.href= url;
+		}
+		function sbgz() {
+			var url =  ui.getRealUrl("/sbgzbjac/getSbgzbj");	//设备工装报警
+			window.location.href= url;
+		}
+		function gzbj() {
+			var url =  ui.getRealUrl("/sbgzbjac/getGzbj");	//工装报警
+			window.location.href= url;
+		}
+	]]>
+	</attribute>
+</view>

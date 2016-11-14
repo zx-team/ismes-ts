@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="gzjs" title="工装接收" onReady="setDefaultFocus" context="touch">
+	<form name="form-gzjs" method="post" horizontal="true"
+		action="/sbgzbjac/saveGzjs" layoutconstraint="md:10;sm:10;md-offset:1;sm-offset:1">
+		<form-body>
+			<form-group sizing="large">
+			<bunch layoutconstraint="md-offset:4;sm-offset:4">
+				<bunch layoutconstraint="md:12">
+					<label for="zw11" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw12" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw13" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw14" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw15" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw16" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw17" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw18" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw19" layoutconstraint="md:2" />
+				</bunch>
+			</bunch>
+		</form-group>
+			<bunch layoutconstraint="md:12">
+				<bunch layoutconstraint="md:7;md-offset:2;">
+					<form-group sizing="large">
+						<label for="gztm" text="工装条码：" layoutconstraint="md:4" />
+						<text name="gztm" onchange="queryGzxx" layoutconstraint="md:7" />
+					</form-group>
+				</bunch>
+			</bunch>
+			<bunch layoutconstraint="md:12">
+				<bunch layoutconstraint="md:7;md-offset:2;">
+					<form-group sizing="large">
+						<label for="gzmc" text="工装名称：" layoutconstraint="md:4" />
+						<text name="gzmc" readonly="true" layoutconstraint="md:7" />
+					</form-group>
+					<form-group sizing="large">
+						<label for="wllbmc" text="工装类别：" layoutconstraint="md:4" />
+						<text name="wllbmc" readonly="true" layoutconstraint="md:7" />
+					</form-group>
+
+					<form-group sizing="large">
+						<label for="gzgg" text="工装规格：" layoutconstraint="md:4" />
+						<text name="gzgg" readonly="true" layoutconstraint="md:7" />
+					</form-group>
+
+					<form-group sizing="large">
+						<label for="sdtm" text="设备条码：" layoutconstraint="md:4" />
+						<text name="sdtm" onchange="changesdtm" layoutconstraint="md:7" />
+						<hidden name="returnnull" value="0"></hidden>
+						<hidden name="sdtmflag" value="0"></hidden>
+						<hidden name="wllbdm"></hidden>
+						<hidden name="wllb"></hidden>
+						<hidden name="sbmc"></hidden>
+					</form-group>
+				</bunch>
+			</bunch>
+		</form-body>
+		<form-actions>
+			<bunch layoutconstraint="md:2;md-offset:3;sm-offset:3">
+				<button name="fh" label="返回" type="button" onClick="returnIndex"
+					sizing="large"></button>
+			</bunch>
+			<bunch layoutconstraint="md:2">
+				<button name="cz" label="重置" type="button" onClick="customreset"
+					sizing="large"></button>
+			</bunch>
+			<bunch layoutconstraint="md:2">
+				<button name="qd" label="确定" type="button" onClick="saveGzjs"
+					sizing="large"></button>
+			</bunch>
+		</form-actions>
+	</form>
+
+	<attribute name="javascript">
+		<![CDATA[
+
+		
+		function queryGzxx() {
+		    $("#form-gzjs").attr("action", "queryGzxx");
+		    ui.form("form-gzjs").ajaxSubmit(function() {},
+		    function(data) {
+		        if (data == null || data == 'null') {
+		            cleanEmpty();
+		        } else {
+		            ui.text("gzmc").val(data.wlmc);
+		            ui.text("gzgg").val(data.wlgg);
+		            //ui.text("gzlx").val(data.wllxdm);
+		            //ui.select("wllb").val(data.wllbdm);
+		            ui.text("wllbmc").val(data.wllbmc);
+		            ui.hidden("wllb").val(data.wllbdm);
+		            ui.hidden("wllbdm").val(data.wllbdm);
+		            ui.hidden("returnnull").val("1");
+		            $('#sdtm').focus();
+		        }
+		    },
+		    function(data) {
+		        ui.hidden("returnnull").val("0");
+		        ui.alert("查询失败");
+		    });
+		
+		}
+		
+		function saveGzjs() {
+			$("#form-gzjs").attr("action", "saveGzjs");
+		    var btn = this;
+		    gztm = $('#gztm').val();
+		    sdtm = $('#sdtm').val();
+		    returnnull = $('#returnnull').val();
+		    sdtmflag = $('#sdtmflag').val();
+		    if(gztm == ""){
+		     	ui.alert("请输入工装条码");
+		     	return;
+		    }
+		    if(returnnull != 1){
+		     	ui.alert("找不到该工装信息");
+		     	return;
+		    }
+		    if(sdtm == ""){
+		     	ui.alert("请输入设备条码");
+		     	return;
+		    }
+		   	if(sdtmflag != "1"){
+		     	ui.alert("找不到设备条码信息");
+		     	return;
+		    }
+	        ui.form("form-gzjs").ajaxSubmit(function() {
+	            //ui.success("准备提交");
+	            //btn.attr("disabled", true);
+	        },
+	        function(data) {
+	            ui.success(data.msg, "提示");
+	            ui.text("gztm").val("");
+	            ui.text("sdtm").val("");
+	            cleanEmpty();
+	            $('#gztm').focus();
+	        },
+	        function(data) {
+	            ui.error("保存失败！");
+	            //btn.attr("disabled", false);
+	        });
+		}
+		function returnIndex() {
+		    var url = ui.getRealUrl("/sbgzbjac/getFirstpage");
+		    window.location.href = url;
+		}
+		
+		
+		function changesdtm() {
+		 $("#form-gzjs").attr("action", "querySdtm");
+		    ui.form("form-gzjs").ajaxSubmit(function() {},
+		    function(data) {
+		    	if (data == null || data == 'null') {
+		            ui.hidden("sdtmflag").val("0");
+		        } else {
+		        	ui.hidden("sdtmflag").val(data.sdtmflag);
+		        	ui.hidden("sbmc").val(data.sbmc);
+	            	$('#sdtm').blur();
+		        }
+		    },
+		    function(data) {
+		    	ui.hidden("sdtmflag").val("0");
+		    });
+		}
+		
+		
+		function cleanEmpty() {
+		    ui.text("gzmc").val("");
+		    ui.text("gzgg").val("");
+		    //ui.text("gzlx").val("");
+		    //ui.select("wllb").val("");
+		    //ui.hidden("wllb").val("");
+		    ui.hidden("sdtmflag").val("0");
+		    ui.text("wllbmc").val("");
+		    ui.hidden("sbmc").val("");
+		    ui.hidden("wllb").val("");
+		    ui.hidden("wllbdm").val("");
+		    ui.hidden("returnnull").val("0");
+		}
+		function setDefaultFocus(){
+		
+				hiddenqd = $('#hiddenqd').val(); 
+				$("#image_qd").attr("src", hiddenqd); 
+			
+				hiddencz = $('#hiddencz').val(); 
+				$("#image_cz").attr("src", hiddencz); 
+			
+				hiddenfh = $('#hiddenfh').val(); 
+				$("#image_fh").attr("src", hiddenfh); 
+			   $('#gztm').focus();
+		}
+		
+		function customreset(){
+			ui.text("gztm").val("");
+			ui.text("sdtm").val("");
+			cleanEmpty();
+			 $('#gztm').focus();
+		}
+		
+		$("input:text").click(function(){
+    		$(this).select();
+		});
+	]]>
+	</attribute>
+</view>

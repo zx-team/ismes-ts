@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module name="ts" version="1.0.0" category="system">
+	<information>
+		<name>System User Management</name>
+		<vendor>
+			<name>Isesol isMES</name>
+			<url>http://www.isesol.com/</url>
+		</vendor>
+		<description>User is a module which adds user functionality to system.</description>
+		<license>AGPL</license>
+	</information>
+	<activities>
+		<activity name="sbgzbjac" dialect="java"  class="com.isesol.mes.ismes.ts.activity.SbgzbjActivity"/>
+	</activities>
+	<roles>
+		<role name="WORKER" label="加工工人" description="具有该角色的用户可以对触摸屏操作" />
+	</roles>
+	<resources>
+		<resource name="wlsd" fileName="wlsd.png" shared="true" type="image" uri="/module/ts/resource/images/node/wlsd.png"/>
+		<resource name="wljs" fileName="wljs.png" shared="true" type="image" uri="/module/ts/resource/images/node/wljs.png"/>
+		<resource name="gzsd" fileName="gzsd.png" shared="true" type="image" uri="/module/ts/resource/images/node/gzsd.png"/>
+		<resource name="gzjs" fileName="gzjs.png" shared="true" type="image" uri="/module/ts/resource/images/node/gzjs.png"/>
+		<resource name="bkg" fileName="bkg.png" shared="true" type="image" uri="/module/ts/resource/images/node/bkg.png"/>
+		<resource name="ckgy" fileName="ckgy.png" shared="true" type="image" uri="/module/ts/resource/images/node/ckgy.png"/>
+		<resource name="bg" fileName="bg.png" shared="true" type="image" uri="/module/ts/resource/images/node/bg.png"/>
+		<resource name="gzrk" fileName="gzrk.png" shared="true" type="image" uri="/module/ts/resource/images/node/gzrk.png"/>
+		<resource name="ljrk" fileName="ljrk.png" shared="true" type="image" uri="/module/ts/resource/images/node/ljrk.png"/>
+		<resource name="gzck" fileName="gzck.png" shared="true" type="image" uri="/module/ts/resource/images/node/gzck.png"/>
+		<resource name="ljck" fileName="ljck.png" shared="true" type="image" uri="/module/ts/resource/images/node/ljck.png"/>
+		
+		<resource name="qlbj" fileName="qlbj.png" shared="true" type="image" uri="/module/ts/resource/images/node/qlbj.png"/>
+		<resource name="sbgz" fileName="sbgz.png" shared="true" type="image" uri="/module/ts/resource/images/node/sbgz.png"/>
+		<resource name="gzbj" fileName="gzbj.png" shared="true" type="image" uri="/module/ts/resource/images/node/gzbj.png"/>
+		
+		
+		<resource name="dj" fileName="dj.png" shared="true" type="image" uri="/module/ts/resource/images/node/dj.png"/>
+		<resource name="jj" fileName="jj.png" shared="true" type="image" uri="/module/ts/resource/images/node/jj.png"/>
+		<resource name="lj" fileName="lj.png" shared="true" type="image" uri="/module/ts/resource/images/node/lj.png"/>
+		
+		<resource name="dj_bk" fileName="dj_bk.png" shared="true" type="image" uri="/module/ts/resource/images/node/dj_bk.png"/>
+		<resource name="jj_bk" fileName="jj_bk.png" shared="true" type="image" uri="/module/ts/resource/images/node/jj_bk.png"/>
+		<resource name="lj_bk" fileName="lj_bk.png" shared="true" type="image" uri="/module/ts/resource/images/node/lj_bk.png"/>
+		
+		
+		<resource name="qdbutton" fileName="qd.png" shared="true" type="image" uri="/module/ts/resource/images/node/qd.png"/>
+		<resource name="czbutton" fileName="cz.png" shared="true" type="image" uri="/module/ts/resource/images/node/cz.png"/>
+		<resource name="fhbutton" fileName="fh.png" shared="true" type="image" uri="/module/ts/resource/images/node/fh.png"/>
+		
+		<resource name="wxj" fileName="wxj.png" shared="true" type="image" uri="/module/ts/resource/images/node/wxj.png"/>
+		<resource name="dxj" fileName="dxj.png" shared="true" type="image" uri="/module/ts/resource/images/node/dxj.png"/>
+		<resource name="yxj" fileName="yxj.png" shared="true" type="image" uri="/module/ts/resource/images/node/yxj.png"/>
+	</resources>
+	<services>
+		<service name = "tsservice_tbgzbj" activity = "sbgzbjac" activity-method = "getSbgzbj"/>
+		<service name = "tsservice_wlsd" activity = "sbgzbjac" activity-method = "getWlsd"/>
+		<service name = "tsservice_qlbj" activity = "sbgzbjac" activity-method = "getQlbj"/>
+		<service name = "tsservice_gzsd" activity = "sbgzbjac" activity-method = "getGzsd"/>
+		<service name = "tsservice_wljs" activity = "sbgzbjac" activity-method = "getWljs"/>
+		<service name = "tsservice_gzjs" activity = "sbgzbjac" activity-method = "getGzjs"/>
+		<service name = "tsservice_bg" activity = "sbgzbjac" activity-method = "getBg"/>
+		<service name = "tsservice_bkg" activity = "sbgzbjac" activity-method = "getBkg"/>
+		<service name = "tsservice_firstpage" activity = "sbgzbjac" activity-method = "getFirstpage"/>
+		<service name = "tsservice_gzbj" activity = "sbgzbjac" activity-method = "getGzbj"/>
+	</services>
+</module>

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="gzbj" title="工装报警" onReady="testViewReady" context="touch">
+	<form-body>
+		<form-group sizing="large">
+			<bunch layoutconstraint="md-offset:4;sm-offset:4">
+				<bunch layoutconstraint="md:12">
+					<label for="zw11" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw12" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw13" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw14" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw15" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw16" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw17" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw18" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw19" layoutconstraint="md:2" />
+				</bunch>
+			</bunch>
+		</form-group>
+		<bunch layoutconstraint="md:12">
+			<bunch layoutconstraint="md:7">
+				<form-group sizing="large">
+					<label for="sbtm" text="设备条码：" layoutconstraint="md:2;md-offset:5;sm-offset:5"
+						sizing="large" />
+					<text name="sbtm" onchange="querySbxx" layoutconstraint="md:5" />
+				</form-group>
+			</bunch>
+		</bunch>
+		<form-group sizing="large">
+			<bunch layoutconstraint="md-offset:4;sm-offset:4">
+				<bunch layoutconstraint="md:12">
+					<label for="zw1" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw2" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw3" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw4" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw5" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw6" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw7" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw8" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw9" layoutconstraint="md:2" />
+				</bunch>
+			</bunch>
+		</form-group>
+		<form-actions>
+			<bunch layoutconstraint="md:2;md-offset:3;sm-offset:3">
+				<image name="image_dj" popshow="false" onClick="isSelect_image_dj"></image>
+				<hidden name="hiddendj" bind="pics.picDj"></hidden>
+				<hidden name="hiddendj_bk" bind="pics.picDj_bk"></hidden>
+			</bunch>
+			<bunch layoutconstraint="md:2">
+				<image name="image_jj" popshow="false" onClick="isSelect_image_jj"></image>
+				<hidden name="hiddenjj" bind="pics.picJj"></hidden>
+				<hidden name="hiddenjj_bk" bind="pics.picJj_bk"></hidden>
+			</bunch>
+			<bunch layoutconstraint="md:2">
+				<image name="image_lj" popshow="false" onClick="isSelect_image_lj"></image>
+				<hidden name="hiddenlj" bind="pics.picLj"></hidden>
+				<hidden name="hiddenlj_bk" bind="pics.picLj_bk"></hidden>
+			</bunch>
+		</form-actions>
+		<form-group sizing="large">
+			<bunch layoutconstraint="md-offset:4;sm-offset:4">
+				<bunch layoutconstraint="md:12">
+					<label for="zw21" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw22" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw23" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw24" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw25" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw26" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw27" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw28" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw29" layoutconstraint="md:2" />
+				</bunch>
+			</bunch>
+		</form-group>
+		<form-actions>
+			<bunch layoutconstraint="md:2;md-offset:3;sm-offset:3">
+				<button name="fh" label="返回" type="button" onClick="returnIndex"
+					sizing="large"></button>
+			</bunch>
+			<bunch layoutconstraint="md:2">
+				<button name="cz" label="重置" type="button" onClick="customreset"
+					sizing="large"></button>
+			</bunch>
+			<bunch layoutconstraint="md:2">
+				<button name="qd" label="确定" type="button" onClick="saveGzbj"
+					sizing="large"></button>
+			</bunch>
+		</form-actions>
+		<hidden name="returnnull" value="0"></hidden>
+		<hidden name="selectdj" value="0"></hidden>
+		<hidden name="selectjj" value="0"></hidden>
+		<hidden name="selectlj" value="0"></hidden>
+	</form-body>
+
+	<attribute name="javascript">
+		<![CDATA[
+			function setBlur() {
+			    $('#sbtm').blur();
+			}
+			
+			function isSelect_image_dj() {
+			    selectdj = $('#selectdj').val();
+			    if (selectdj == 0) {
+			        hiddendj_bk = $('#hiddendj_bk').val();
+			        $("#image_dj").attr("src", hiddendj_bk);
+			        ui.hidden("selectdj").val("1");
+			    } else {
+			        hiddendj = $('#hiddendj').val();
+			        $("#image_dj").attr("src", hiddendj);
+			        ui.hidden("selectdj").val("0");
+			    }
+			}
+			
+			function isSelect_image_jj() {
+			
+			    selectjj = $('#selectjj').val();
+			    if (selectjj == 0) {
+			        hiddenjj_bk = $('#hiddenjj_bk').val();
+			        $("#image_jj").attr("src", hiddenjj_bk);
+			        ui.hidden("selectjj").val("1");
+			    } else {
+			        hiddenjj = $('#hiddenjj').val();
+			        $("#image_jj").attr("src", hiddenjj);
+			        ui.hidden("selectjj").val("0");
+			    }
+			
+			}
+			
+			function isSelect_image_lj()
+			
+			{
+			    selectlj = $('#selectlj').val();
+			    if (selectlj == 0) {
+			        hiddenlj_bk = $('#hiddenlj_bk').val();
+			        $("#image_lj").attr("src", hiddenlj_bk);
+			        ui.hidden("selectlj").val("1");
+			    } else {
+			        hiddenlj = $('#hiddenlj').val();
+			        $("#image_lj").attr("src", hiddenlj);
+			        ui.hidden("selectlj").val("0");
+			    }
+			}
+			
+			function returnIndex() {
+			    var url = ui.getRealUrl("/sbgzbjac/getFirstpage");
+			    window.location.href = url;
+			}
+			
+			function testViewReady() {
+			    hiddendj = $('#hiddendj').val();
+			    $("#image_dj").attr("src", hiddendj);
+			
+			    hiddenjj = $('#hiddenjj').val();
+			    $("#image_jj").attr("src", hiddenjj);
+			
+			    hiddenlj = $('#hiddenlj').val();
+			    $("#image_lj").attr("src", hiddenlj);
+			    
+			   	hiddenqd = $('#hiddenqd').val(); 
+				$("#image_qd").attr("src", hiddenqd); 
+			
+				hiddencz = $('#hiddencz').val(); 
+				$("#image_cz").attr("src", hiddencz); 
+			
+				hiddenfh = $('#hiddenfh').val(); 
+				$("#image_fh").attr("src", hiddenfh); 
+			     $('#sbtm').focus();
+			      $("#image_sb").hide()
+			
+			}
+			function querySbxx() {
+			    sbtm = $('#sbtm').val();
+			    $.ajax({
+			        type: "POST",
+			        url: ui.getRealUrl("/sbgzbjac/querySbxx"),
+			        async: false,
+			        data: {
+			            sbtm: sbtm
+			        },
+			        success: function(data) {
+			            if (data == null || data == 'null') {
+			                ui.hidden("returnnull").val("0");
+			                //ui.alert("没有查询出该设备信息");
+			            } else {
+			                ui.hidden("returnnull").val("1");
+			                // $('#sbtm').blur();
+			            }
+			        },
+			        error: function(data) {
+			            ui.alert("查询失败");
+			        }
+			    });
+			}
+			function saveGzbj() {
+			    sbtm = $('#sbtm').val();
+			    selectdj = $('#selectdj').val();
+			    selectjj = $('#selectjj').val();
+			    selectlj = $('#selectlj').val();
+			    returnnull = $('#returnnull').val();
+			    if(sbtm == ""){
+			   	 	ui.alert("请输入设备条码");
+			   	 	return;
+			    }
+			    if(returnnull != 1){
+			   	 	ui.alert("找不到该设备信息");
+			   	 	return;
+			    }
+			    if(selectdj == 0 && selectjj == 0 && selectlj == 0){
+			   	 	ui.alert("请输入报警内容");
+			   	 	return;
+			    }
+	            $.ajax({
+	                type: "POST",
+	                url: ui.getRealUrl("/sbgzbjac/saveGzbj"),
+	                async: false,
+	                data: {
+	                    sbtm: sbtm,
+	                    selectdj: selectdj,
+	                    selectjj: selectjj,
+	                    selectlj: selectlj
+	                },
+	                success: function(data) {
+	                    ui.success(data.msg, "提示");
+	                    $('#sbtm').focus();
+	                },
+	                error: function(data) {
+	                    ui.error("保存失败！");
+	                }
+	            });
+			}
+		function customreset(){
+			
+			ui.text("sbtm").val("");
+			ui.hidden("returnnull").val("0");
+			ui.hidden("selectdj").val("0");
+			ui.hidden("selectjj").val("0");
+			ui.hidden("selectlj").val("0");
+			
+			hiddendj = $('#hiddendj').val();
+		    $("#image_dj").attr("src", hiddendj);
+		
+		    hiddenjj = $('#hiddenjj').val();
+		    $("#image_jj").attr("src", hiddenjj);
+		
+		    hiddenlj = $('#hiddenlj').val();
+		    $("#image_lj").attr("src", hiddenlj);
+		    $('#sbtm').focus();
+		}
+		
+		$("input:text").click(function(){
+    		$(this).select();
+		});
+	]]>
+	</attribute>
+</view>

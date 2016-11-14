@@ -1,0 +1,1760 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="homepage" title="主页面" onReady="testViewReady" context="touch">
+	<bunch layoutconstraint="md:12;sm:12;">
+		<panel layoutconstraint="md:14;sm:14;">
+			<panel-body>
+				<button name="zjBtn"   label="质检"      type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;" onClick="zjOnClick"></button>
+				<button name="wlsdBtn" label="物料送达"  type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;" onClick="wlsdOnClick"></button>
+				<button name="gzsdBtn" label="工装送达"  type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;" onClick="gzsdOnClick"></button>
+				<button name="bkgBtn"  label="报开工"    type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;" onClick="bkgOnClick"></button>
+				<button name="bgBtn"   label="报工"      type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;" onClick="bgOnClick"></button>
+				<button name="hxsqBtn" label="换线申请"  type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;" onClick="hxsqOnClick"></button>
+				<button name="qlgjBtn" label="缺料告警"  type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;" onClick="qlgjOnClick"></button>
+				<button name="sbgjBtn" label="设备告警"  type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;" onClick="sbgjOnClick"></button>
+				<button name="wlgjBtn" label="工装告警"  type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;" onClick="gzgjOnClick"></button>
+			</panel-body>
+		</panel>
+		<bunch layoutconstraint="md:12;sm:12;">
+			<bunch layoutconstraint="md:4;sm:4;">
+				<panel layoutconstraint="md:12;sm:12;">
+					<panel-body>
+						<plaintext layoutconstraint="md:5;sm:5" text="零件名称:" type="strong" lead="true" />
+						<plaintext name="zljmc"  layoutconstraint="md:7;sm:7"  text="无" type="strong" lead="true"  bind="pics.zljmc"/>
+						<plaintext text="工序名称:" layoutconstraint="md:5;sm:5" type="strong" lead="true" />
+						<plaintext name="zgxzmc"  layoutconstraint="md:7;sm:7"  text="无" type="strong" lead="true" bind="pics.zgxzmc"/>
+						<plaintext text="流程卡号:" layoutconstraint="md:5;sm:5" type="strong" lead="true" />
+						<plaintext name="zlckh"  layoutconstraint="md:7;sm:7"  text="无" type="strong" lead="true"  bind="pics.zlckh"/>
+						<plaintext text="完工情况:" layoutconstraint="md:5;sm:5" type="strong" lead="true" />
+						<plaintext name="zwcsl"  layoutconstraint="md:7;sm:7"  text="无" type="strong" lead="true"  bind="pics.zwcsl"/>
+					</panel-body>
+				</panel>
+				<plaintext layoutconstraint="md:3;sm:3" text="今天:" type="strong" lead="true" />
+				<plaintext name="jt"  layoutconstraint="md:9;sm:9"  type="strong" lead="true"  bind="pics.sjto"  format="YYYY年MM月dd日"/>
+				<table name="table_gdxx" scroll="false" height="160" url="table_gdxxjt" 
+					layoutconstraint="md:15;sm:15;"  showpager="false" pagesize="3">
+					<column label="零件名称" name="ljmc"></column>
+					<column label="零件ID" name="id" key="true" hidden="true"></column>
+					<column label="流程卡号" name="xh" width="200"></column>
+					<column label="加工数量" name="jgsl"></column>
+				</table>
+				<bunch layoutconstraint="md:12"   hidden="true" >
+					<hidden name="s_gdid"  bind="pics.s_gdid"></hidden>
+					<hidden name="s_scrwid" ></hidden>
+					<hidden name="s_gxzid"  bind="pics.s_gxzid"></hidden>
+					<hidden name="s_ljid"  bind="pics.s_ljid"></hidden>
+					<hidden name="s_xh"  bind="pics.zlckh"></hidden>
+					<hidden name="s_jgdyid"  bind="pics.s_jgdyid"></hidden>
+					
+					<hidden name="hiddenimg011" bind="pics.image_xj011"></hidden>
+					<hidden name="hiddenimg021" bind="pics.image_xj021"></hidden>
+					<hidden name="hiddenimg012" bind="pics.image_xj012"></hidden>
+					<hidden name="hiddenimg022" bind="pics.image_xj022"></hidden>
+					<hidden name="hiddenimg013" bind="pics.image_xj013"></hidden>
+					<hidden name="hiddenimg023" bind="pics.image_xj023"></hidden>
+					<hidden name="hiddenimg014" bind="pics.image_xj014"></hidden>
+					<hidden name="hiddenimg024" bind="pics.image_xj024"></hidden>
+					<hidden name="hiddenimg015" bind="pics.image_xj015"></hidden>
+					<hidden name="hiddenimg025" bind="pics.image_xj025"></hidden>
+					<hidden name="hiddenimg016" bind="pics.image_xj016"></hidden>
+					<hidden name="hiddenimg026" bind="pics.image_xj026"></hidden>
+					<hidden name="hiddenimg017" bind="pics.image_xj017"></hidden>
+					<hidden name="hiddenimg027" bind="pics.image_xj027"></hidden>
+					<hidden name="hiddenimg018" bind="pics.image_xj018"></hidden>
+					<hidden name="hiddenimg028" bind="pics.image_xj028"></hidden>
+					<hidden name="hiddenimg019" bind="pics.image_xj019"></hidden>
+					<hidden name="hiddenimg029" bind="pics.image_xj029"></hidden>
+					<hidden name="hiddenzsbid" bind="pics.zsbid1"></hidden>
+					<hidden name="zdw" bind="T1"></hidden>
+					<hidden name="hiddenzsbid1" bind="pics.zsbid1"></hidden>
+					<hidden name="hiddenzsbid2" bind="pics.zsbid2"></hidden>
+					<hidden name="hiddenzsbid3" bind="pics.zsbid3"></hidden>
+					<hidden name="hiddenzsbmc1" bind="pics.zsbmc1"></hidden>
+					<hidden name="hiddenzsbmc2" bind="pics.zsbmc2"></hidden>
+					<hidden name="hiddenzsbmc3" bind="pics.zsbmc3"></hidden>
+					<hidden name="hiddensbdw1T1" bind="pics.sbdw1T1"></hidden>
+					<hidden name="hiddensbdw1T2" bind="pics.sbdw1T2"></hidden>
+					<hidden name="hiddensbdw1T3" bind="pics.sbdw1T3"></hidden>
+					<hidden name="hiddensbdw1T4" bind="pics.sbdw1T4"></hidden>
+					<hidden name="hiddensbdw1T5" bind="pics.sbdw1T5"></hidden>
+					<hidden name="hiddensbdw1T6" bind="pics.sbdw1T6"></hidden>
+					<hidden name="hiddensbdw1T7" bind="pics.sbdw1T7"></hidden>
+					<hidden name="hiddensbdw1T8" bind="pics.sbdw1T8"></hidden>
+					<hidden name="hiddensbdw1T9" bind="pics.sbdw1T9"></hidden>
+					<hidden name="hiddensbdw1T10" bind="pics.sbdw1T10"></hidden>
+					<hidden name="hiddensbdw1T11" bind="pics.sbdw1T11"></hidden>
+					<hidden name="hiddensbdw1T12" bind="pics.sbdw1T12"></hidden>
+					<hidden name="hiddensbdw2T1" bind="pics.sbdw2T1"></hidden>
+					<hidden name="hiddensbdw2T2" bind="pics.sbdw2T2"></hidden>
+					<hidden name="hiddensbdw2T3" bind="pics.sbdw2T3"></hidden>
+					<hidden name="hiddensbdw2T4" bind="pics.sbdw2T4"></hidden>
+					<hidden name="hiddensbdw2T5" bind="pics.sbdw2T5"></hidden>
+					<hidden name="hiddensbdw2T6" bind="pics.sbdw2T6"></hidden>
+					<hidden name="hiddensbdw2T7" bind="pics.sbdw2T7"></hidden>
+					<hidden name="hiddensbdw2T8" bind="pics.sbdw2T8"></hidden>
+					<hidden name="hiddensbdw2T9" bind="pics.sbdw2T9"></hidden>
+					<hidden name="hiddensbdw2T10" bind="pics.sbdw2T10"></hidden>
+					<hidden name="hiddensbdw2T11" bind="pics.sbdw2T11"></hidden>
+					<hidden name="hiddensbdw2T12" bind="pics.sbdw2T12"></hidden>
+					<hidden name="hiddensbdw3T1" bind="pics.sbdw3T1"></hidden>
+					<hidden name="hiddensbdw3T2" bind="pics.sbdw3T2"></hidden>
+					<hidden name="hiddensbdw3T3" bind="pics.sbdw3T3"></hidden>
+					<hidden name="hiddensbdw3T4" bind="pics.sbdw3T4"></hidden>
+					<hidden name="hiddensbdw3T5" bind="pics.sbdw3T5"></hidden>
+					<hidden name="hiddensbdw3T6" bind="pics.sbdw3T6"></hidden>
+					<hidden name="hiddensbdw3T7" bind="pics.sbdw3T7"></hidden>
+					<hidden name="hiddensbdw3T8" bind="pics.sbdw3T8"></hidden>
+					<hidden name="hiddensbdw3T9" bind="pics.sbdw3T9"></hidden>
+					<hidden name="hiddensbdw3T10" bind="pics.sbdw3T10"></hidden>
+					<hidden name="hiddensbdw3T11" bind="pics.sbdw3T11"></hidden>
+					<hidden name="hiddensbdw3T12" bind="pics.sbdw3T12"></hidden>
+					<hidden name="hiddengxtztpurl1" bind="pics.gxtztpurl1"></hidden>
+					<hidden name="hiddengxtztpurl2" bind="pics.gxtztpurl2"></hidden>
+					<hidden name="hiddengxtztpurl3" bind="pics.gxtztpurl3"></hidden>
+				</bunch>
+				<plaintext layoutconstraint="md:3;sm:3" text="明天:" type="strong" lead="true" />
+				<plaintext name="mt"  layoutconstraint="md:9;sm:9"   type="strong" lead="true"  bind="pics.sjtm"  format="YYYY年MM月dd日"/>
+				<table name="table_gdxxmt" scroll="false" height="120"  url="table_gdxxmt"  layoutconstraint="md:12;sm:12;"  showpager="false"  pagesize="2">
+					<column label="零件名称" name="ljmc"></column>
+					<column label="零件ID" name="id" key="true" hidden="true"></column>
+					<column label="流程卡号" name="xh" width="200"></column>
+					<column label="加工数量" name="jgsl"></column>
+				</table>
+				<bunch layoutconstraint="md:12;sm:12;">
+					<plaintext layoutconstraint="md:6;sm:6" text="刀具寿命:" type="strong" lead="true"/>
+				</bunch>
+				<bunch layoutconstraint="md:12;sm:12;">
+					<button  name="sbmc1" label="0" href="javascript:void(0);" onClick="sbmcclick1"	context="link" layoutconstraint="md:3;sm:3;" sizing="large" ></button>
+					<button  name="sbmc2" label="0" href="javascript:void(0);" onClick="sbmcclick2"	context="link" layoutconstraint="md:3;sm:3;" sizing="large"></button>
+					<button  name="sbmc3" label="0" href="javascript:void(0);" onClick="sbmcclick3" context="link" layoutconstraint="md:3;sm:3;" sizing="large"></button>
+				</bunch>
+				
+				<bunch layoutconstraint="md:12;sm:12;" name="divdjsm1" >
+					<bunch layoutconstraint="md:12;sm:12;">
+						<plaintext layoutconstraint="md:2;sm:2" text="T1" type="strong" lead="true"/><button  name="sbdw1T1" label="0" href="javascript:void(0);" onClick="djsmql1"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T2" type="strong" lead="true"/><button  name="sbdw1T2" label="0" href="javascript:void(0);" onClick="djsmql2"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T3" type="strong" lead="true"/><button  name="sbdw1T3" label="0" href="javascript:void(0);" onClick="djsmql3"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+					</bunch>
+					<bunch layoutconstraint="md:12;sm:12;">	
+						<plaintext layoutconstraint="md:2;sm:2" text="T4" type="strong" lead="true"/><button  name="sbdw1T4" label="0" href="javascript:void(0);" onClick="djsmql4"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T5" type="strong" lead="true"/><button  name="sbdw1T5" label="0" href="javascript:void(0);" onClick="djsmql5"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T6" type="strong" lead="true"/><button  name="sbdw1T6" label="0" href="javascript:void(0);" onClick="djsmql6"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+					</bunch>
+					<bunch layoutconstraint="md:12;sm:12;">	
+						<plaintext layoutconstraint="md:2;sm:2" text="T7" type="strong" lead="true"/><button  name="sbdw1T7" label="0" href="javascript:void(0);" onClick="djsmql7"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T8" type="strong" lead="true"/><button  name="sbdw1T8" label="0" href="javascript:void(0);" onClick="djsmql8"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T9" type="strong" lead="true"/><button  name="sbdw1T9" label="0" href="javascript:void(0);" onClick="djsmql9"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+					</bunch>
+					<bunch layoutconstraint="md:12;sm:12;">	
+						<plaintext layoutconstraint="md:2;sm:2" text="T10" type="strong" lead="true"/><button  name="sbdw1T10" label="0" href="javascript:void(0);" onClick="djsmql10"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T11" type="strong" lead="true"/><button  name="sbdw1T11" label="0" href="javascript:void(0);" onClick="djsmql11"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T12" type="strong" lead="true"/><button  name="sbdw1T12" label="0" href="javascript:void(0);" onClick="djsmql12"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+					</bunch>
+				</bunch>
+				<bunch layoutconstraint="md:12;sm:12;" name="divdjsm2" hidden="true">
+					<bunch layoutconstraint="md:12;sm:12;">
+						<plaintext layoutconstraint="md:2;sm:2" text="T1" type="strong" lead="true"/><button  name="sbdw2T1" label="0" href="javascript:void(0);" onClick="djsmql1"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T2" type="strong" lead="true"/><button  name="sbdw2T2" label="0" href="javascript:void(0);" onClick="djsmql2"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T3" type="strong" lead="true"/><button  name="sbdw2T3" label="0" href="javascript:void(0);" onClick="djsmql3"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+					</bunch>
+					<bunch layoutconstraint="md:12;sm:12;">	
+						<plaintext layoutconstraint="md:2;sm:2" text="T4" type="strong" lead="true"/><button  name="sbdw2T4" label="0" href="javascript:void(0);" onClick="djsmql4"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T5" type="strong" lead="true"/><button  name="sbdw2T5" label="0" href="javascript:void(0);" onClick="djsmql5"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T6" type="strong" lead="true"/><button  name="sbdw2T6" label="0" href="javascript:void(0);" onClick="djsmql6"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+					</bunch>
+					<bunch layoutconstraint="md:12;sm:12;">	
+						<plaintext layoutconstraint="md:2;sm:2" text="T7" type="strong" lead="true"/><button  name="sbdw2T7" label="0" href="javascript:void(0);" onClick="djsmql7"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T8" type="strong" lead="true"/><button  name="sbdw2T8" label="0" href="javascript:void(0);" onClick="djsmql8"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T9" type="strong" lead="true"/><button  name="sbdw2T9" label="0" href="javascript:void(0);" onClick="djsmql9"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+					</bunch>
+					<bunch layoutconstraint="md:12;sm:12;">	
+						<plaintext layoutconstraint="md:2;sm:2" text="T10" type="strong" lead="true"/><button  name="sbdw2T10" label="0" href="javascript:void(0);" onClick="djsmql10"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T11" type="strong" lead="true"/><button  name="sbdw2T11" label="0" href="javascript:void(0);" onClick="djsmql11"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T12" type="strong" lead="true"/><button  name="sbdw2T12" label="0" href="javascript:void(0);" onClick="djsmql12"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+					</bunch>
+				</bunch>
+				<bunch layoutconstraint="md:12;sm:12;" name="divdjsm3" hidden="true">
+					<bunch layoutconstraint="md:12;sm:12;">
+						<plaintext layoutconstraint="md:2;sm:2" text="T1" type="strong" lead="true"/><button  name="sbdw3T1" label="0" href="javascript:void(0);" onClick="djsmql1"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T2" type="strong" lead="true"/><button  name="sbdw3T2" label="0" href="javascript:void(0);" onClick="djsmql2"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T3" type="strong" lead="true"/><button  name="sbdw3T3" label="0" href="javascript:void(0);" onClick="djsmql3"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+					</bunch>
+					<bunch layoutconstraint="md:12;sm:12;">	
+						<plaintext layoutconstraint="md:2;sm:2" text="T4" type="strong" lead="true"/><button  name="sbdw3T4" label="0" href="javascript:void(0);" onClick="djsmql4"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T5" type="strong" lead="true"/><button  name="sbdw3T5" label="0" href="javascript:void(0);" onClick="djsmql5"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T6" type="strong" lead="true"/><button  name="sbdw3T6" label="0" href="javascript:void(0);" onClick="djsmql6"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+					</bunch>
+					<bunch layoutconstraint="md:12;sm:12;">	
+						<plaintext layoutconstraint="md:2;sm:2" text="T7" type="strong" lead="true"/><button  name="sbdw3T7" label="0" href="javascript:void(0);" onClick="djsmql7"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T8" type="strong" lead="true"/><button  name="sbdw3T8" label="0" href="javascript:void(0);" onClick="djsmql8"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T9" type="strong" lead="true"/><button  name="sbdw3T9" label="0" href="javascript:void(0);" onClick="djsmql9"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+					</bunch>
+					<bunch layoutconstraint="md:12;sm:12;">	
+						<plaintext layoutconstraint="md:2;sm:2" text="T10" type="strong" lead="true"/><button  name="sbdw3T10" label="0" href="javascript:void(0);" onClick="djsmql10"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T11" type="strong" lead="true"/><button  name="sbdw3T11" label="0" href="javascript:void(0);" onClick="djsmql11"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T12" type="strong" lead="true"/><button  name="sbdw3T12" label="0" href="javascript:void(0);" onClick="djsmql12"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+					</bunch>
+				</bunch>
+				
+				<bunch layoutconstraint="md:12;sm:12;">
+					<plaintext layoutconstraint="md:6;sm:6" text="本日巡检:" type="strong" lead="true"/>
+				</bunch>
+				<bunch layoutconstraint="md:12;sm:12;">
+					<bunch layoutconstraint="md:4;sm:4">
+						<bunch layoutconstraint="md:6;sm:6">
+							<image name="image_xj011" popshow="false" height="50"  width="50" ></image>
+						</bunch>
+						<bunch layoutconstraint="md:6;sm:6">
+							<image name="image_xj021" popshow="false" height="50"  width="50"  ></image>
+						</bunch>
+						<plaintext layoutconstraint="md:12;sm:12;" text="08:00" type="strong" lead="true" align = "center"  bind="pics.xjsj01"/>
+					</bunch>
+					<bunch layoutconstraint="md:4;sm:4">
+						<bunch layoutconstraint="md:6;sm:6">
+							<image name="image_xj012" popshow="false" height="50"  width="50"></image>
+						</bunch>
+						<bunch layoutconstraint="md:6;sm:6">
+							<image name="image_xj022" popshow="false" height="50"  width="50"></image>
+						</bunch>
+						<plaintext layoutconstraint="md:12;sm:12;" text="10:00" type="strong" lead="true" align = "center"  bind="pics.xjsj02"/>
+					</bunch>
+					<bunch layoutconstraint="md:4;sm:4">
+						<bunch layoutconstraint="md:6;sm:6">
+							<image name="image_xj013" popshow="false" height="50"  width="50"></image>
+						</bunch>
+						<bunch layoutconstraint="md:6;sm:6">
+							<image name="image_xj023" popshow="false" height="50"  width="50"></image>
+						</bunch>
+						<plaintext layoutconstraint="md:12;sm:12;" text="12:00" type="strong" lead="true" align = "center"  bind="pics.xjsj03"/>
+					</bunch>
+				</bunch>
+				<bunch layoutconstraint="md:12;sm:12;">
+					<bunch layoutconstraint="md:4;sm:4">
+						<bunch layoutconstraint="md:6;sm:6">
+							<image name="image_xj014" popshow="false" height="50"  width="50"></image>
+						</bunch>
+						<bunch layoutconstraint="md:6;sm:6">
+							<image name="image_xj024" popshow="false" height="50"  width="50"></image>
+						</bunch>
+						<plaintext layoutconstraint="md:12;sm:12;" text="14:00" type="strong" lead="true" align = "center" bind="pics.xjsj04"/>
+					</bunch>
+					<bunch layoutconstraint="md:4;sm:4">
+						<bunch layoutconstraint="md:6;sm:6">
+							<image name="image_xj015" popshow="false" height="50"  width="50"></image>
+						</bunch>
+						<bunch layoutconstraint="md:6;sm:6">
+							<image name="image_xj025" popshow="false" height="50"  width="50"></image>
+						</bunch>
+						<plaintext layoutconstraint="md:12;sm:12;" text="16:00" type="strong" lead="true" align = "center" bind="pics.xjsj05"/>
+					</bunch>
+					<bunch layoutconstraint="md:4;sm:4">
+						<bunch layoutconstraint="md:6;sm:6">
+							<image name="image_xj016" popshow="false" height="50"  width="50"></image>
+						</bunch>
+						<bunch layoutconstraint="md:6;sm:6">
+							<image name="image_xj026" popshow="false" height="50"  width="50"></image>
+						</bunch>
+						<plaintext layoutconstraint="md:12;sm:12;" text="18:00" type="strong" lead="true" align = "center"  bind="pics.xjsj06"/>
+					</bunch>
+				</bunch>
+				<bunch layoutconstraint="md:12;sm:12;">
+					<bunch layoutconstraint="md:4;sm:4">
+						<bunch layoutconstraint="md:6;sm:6">
+							<image name="image_xj017" popshow="false" height="50"  width="50"></image>
+						</bunch>
+						<bunch layoutconstraint="md:6;sm:6">
+							<image name="image_xj027" popshow="false" height="50"  width="50"></image>
+						</bunch>
+						<plaintext layoutconstraint="md:12;sm:12;" text="20:00" type="strong" lead="true" align = "center" bind="pics.xjsj07"/>
+					</bunch>
+					<bunch layoutconstraint="md:4;sm:4">
+						<bunch layoutconstraint="md:6;sm:6">
+							<image name="image_xj018" popshow="false" height="50"  width="50"></image>
+						</bunch>
+						<bunch layoutconstraint="md:6;sm:6">
+							<image name="image_xj028" popshow="false" height="50"  width="50"></image>
+						</bunch>
+						<plaintext layoutconstraint="md:12;sm:12;" text="22:00" type="strong" lead="true" align = "center" bind="pics.xjsj08"/>
+					</bunch>
+					<bunch layoutconstraint="md:4;sm:4">
+						<bunch layoutconstraint="md:6;sm:6">
+							<image name="image_xj019" popshow="false" height="50"  width="50"></image>
+						</bunch>
+						<bunch layoutconstraint="md:6;sm:6">
+							<image name="image_xj029" popshow="false" height="50"  width="50"></image>
+						</bunch>
+						<plaintext layoutconstraint="md:12;sm:12;" text="00:00" type="strong" lead="true" align = "center" bind="pics.xjsj09"/>
+					</bunch>
+				</bunch>
+			</bunch>	 
+			<panel layoutconstraint="md:8;sm:8;" >
+				<panel-body>
+					<bunch layoutconstraint="md:12;sm:12;">
+						<plaintext text="换线提醒:" layoutconstraint="md:2;sm:2" type="strong" lead="true" />
+						<plaintext name="hxtz1"  layoutconstraint="md:9;sm:9;md-offset:2;sm-offset:2" text="" type="strong" lead="true"  bind="pics.hxtz1"/>
+						<hidden name="hiddenhxtzgxz1" bind="pics.hxtzgxz1"></hidden>
+					</bunch>
+					<bunch layoutconstraint="md:12;sm:12;">
+						<label for="hxtx" layoutconstraint="md:12;sm:12;" />
+					</bunch>
+					<bunch layoutconstraint="md:12;sm:12;" name = "gxtz">
+						<bunch layoutconstraint="md:12;sm:12;" name = "divgxtz1"  hidden="true">
+							<image shape="thumbnail" name="gxtztp1" popshow="true" src="" width="260" height="180" layoutconstraint="md:12;sm:12">
+							</image>
+						</bunch>
+						<bunch layoutconstraint="md:12;sm:12;" name = "divgxtz2"  hidden="true">
+							<image shape="thumbnail" name="gxtztp2" popshow="true" src="" width="260" height="180" layoutconstraint="md:12;sm:12">
+							</image>
+						</bunch>
+						<bunch layoutconstraint="md:12;sm:12;" name = "divgxtz3"  hidden="true">
+							<image shape="thumbnail" name="gxtztp3" popshow="true" src="" width="260" height="180" layoutconstraint="md:12;sm:12">
+							</image>
+						</bunch>
+					</bunch>
+					
+					<bunch layoutconstraint="md:12;sm:12;"  hidden="true"  name = "divform" >
+						<form name="form-wlsd" method="post" horizontal="true"
+							action="/sbgzbjac/saveWlsd" layoutconstraint="md:12;sm:12;">
+							<form-body>
+								<bunch layoutconstraint="md:12;sm:12;">
+									<form-group sizing="large">
+										<bunch layoutconstraint="md-offset:4;sm-offset:4">
+											<bunch layoutconstraint="md:12">
+												<label for="zw11" layoutconstraint="md:2" />
+											</bunch>
+											<bunch layoutconstraint="md:12">
+												<label for="zw12" layoutconstraint="md:2" />
+											</bunch>
+										</bunch>
+									</form-group>
+								</bunch>
+								<bunch layoutconstraint="md:12;sm:12;" name = "divzj">
+									<bunch layoutconstraint="md:12;sm:12;" name = "zjhead">
+										<button name="fzjBtn"   label="自检"    type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;" onClick="fzjOnClick"></button>
+										<button name="zjyBtn"   label="质检员"  type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;" onClick="zjyOnClick"></button>
+										<button name="sjBtn"    label="首检"    type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;" onClick="sjOnClick"></button>
+										<button name="xjBtn"    label="巡检"    type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;" onClick="xjOnClick"></button>
+										<button name="mjBtn"    label="末检"    type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;" onClick="mjOnClick"></button>
+										<button name="hxBtn"    label="换线"    type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;" onClick="hxOnClick"></button>
+									</bunch>
+									<bunch layoutconstraint="md:12"   hidden="true" >
+										<hidden name="s_fzj"  value="10"></hidden>
+										<hidden name="s_jylx" value="10"></hidden>
+									</bunch>
+									<bunch layoutconstraint="md:12">
+										<form-group sizing="large">
+											<bunch layoutconstraint="md-offset:4;sm-offset:4">
+												<bunch layoutconstraint="md:12">
+													<label for="zw13" layoutconstraint="md:2" />
+												</bunch>
+												<bunch layoutconstraint="md:12">
+													<label for="zw14" layoutconstraint="md:2" />
+												</bunch>
+											</bunch>
+										</form-group>
+									</bunch>
+									<bunch layoutconstraint="md:12" name="divzjy" hidden="true">
+										<form-group sizing="large">
+											<label for="zjry" text="质检员编号：" layoutconstraint="md:3" />
+											<text name="zjry"  layoutconstraint="md:8" />
+										</form-group>
+									</bunch>
+									<table name="table_zj" scroll="false" minheight="300"  url="table_zjxx" autoload="false" onSelectRow="table_ZJClickrow"  layoutconstraint="md:12;sm:12;"  showpager="false"  multiselect="true">
+										<column label="编号" name="zjxh"></column>
+										<column label="质检ID" name="gxzjxlrid" key="true" hidden="true"></column>
+										<column label="类型" name="zjbzlx" ></column>
+										<column label="工艺要求" name="gyyq"></column>
+										<column label="结果" name="zjjg"  editable="true"  editrules="{required:true}" edittype="keyboard">
+											<attribute name="editoptions"><![CDATA[
+											{
+											sizing:'large',
+											type:"custom",
+											keySets:{
+												"normal":['1 2 3 4 5 6 ',
+														  '7 8 9 0 . Φ',
+														  '{bksp} {clear} {cancel}'
+														
+														],
+												meta1:[
+													'm y m e t a 1',
+													'{meta1} {meta2} {accept} {cancel}'
+												],
+												meta2:[
+													'M Y M E T A 2',
+													'{meta1} {meta2} {accept} {cancel}'
+												]
+											},
+											keyAlias:{
+												bksp:'←',
+												cancel:'X'
+											},	
+										}
+											]]></attribute>
+										</column>
+									</table>
+								</bunch>
+								<bunch layoutconstraint="md:12;sm:12;" name = "divwlsdlckh"  >
+									<form-group sizing="large">
+										<label for="gdtm" text="流程卡号：" layoutconstraint="md:3" />
+										<text name="gdtm" onchange="querywlsdByScan" layoutconstraint="md:8" />
+									</form-group>
+								</bunch>
+								<bunch layoutconstraint="md:12;sm:12;" name = "divqlgjlckh"  hidden="true">
+									<form-group sizing="large">
+										<label for="scrwph" text="生产任务批号：" layoutconstraint="md:3" />
+										<text name="scrwph" readonly="true"  layoutconstraint="md:8" />
+									</form-group>
+									<form-group sizing="large">
+										<label for="gdhwltm" text="流程卡号：" layoutconstraint="md:3" />
+										<text name="gdhwltm" onchange="queryqlbjByScan" layoutconstraint="md:8" />
+									</form-group>
+								</bunch>
+								<bunch layoutconstraint="md:12;sm:12;" name = "divwl"  hidden="true" >	
+									<form-group sizing="large">
+										<label for="wlbh" text="物料编号：" layoutconstraint="md:3" />
+										<text name="wlbh" readonly="true" layoutconstraint="md:8" />
+									</form-group>
+									<form-group sizing="large">
+										<label for="wlmc" text="物料名称：" layoutconstraint="md:3" />
+										<text name="wlmc" readonly="true" layoutconstraint="md:8" />
+									</form-group>
+								</bunch>
+								<bunch layoutconstraint="md:12;sm:12;" name = "divxxxx"  hidden="true">	
+									<form-group sizing="large">
+										<label for="pcbh" text="批次编号：" layoutconstraint="md:3" />
+										<text name="pcbh" readonly="true" layoutconstraint="md:8" />
+									</form-group>
+									<form-group sizing="large">
+										<label for="jgsl" text="加工数量：" layoutconstraint="md:3" />
+										<text name="jgsl" readonly="true" layoutconstraint="md:8" />
+									</form-group>
+									<form-group sizing="large">
+										<label for="kssj" text="开始时间：" layoutconstraint="md:3" />
+										<text name="kssj" readonly="true" layoutconstraint="md:8" />
+									</form-group>
+								</bunch>
+								<bunch layoutconstraint="md:12;sm:12;" name = "divownwlsd"  hidden="true">
+									<form-group sizing="large">
+										<label for="sdwz" text="送达位置：" layoutconstraint="md:3" />
+										<text name="sdwz" readonly="true" layoutconstraint="md:8" />
+									</form-group>
+									<!-- <form-group sizing="large">
+										<label for="wlsdtm" text="送达位置条码：" layoutconstraint="md:3" />
+										<text name="wlsdtm" onchange="blur_sdtm" layoutconstraint="md:8" />
+									</form-group> -->
+									<form-group sizing="large">
+										<label for="sl" text="送达数量：" layoutconstraint="md:3" />
+										<keyboard name="sl" type="custom" layoutconstraint="md:8" sizing="large" validate="{min:0,number:true,digits:true}">
+											<keyset name="normal">
+												<attribute name="value">
+												<![CDATA[
+													'1 2 3 4 5 6 ',
+													  '7 8 9 0 . Φ',
+													  '{bksp} {clear} {cancel}'
+												]]>
+												</attribute>
+											</keyset>
+										</keyboard>	
+									</form-group>
+								</bunch>	
+								<bunch layoutconstraint="md:12;sm:12;" name = "divgzsd"   hidden="true">
+									<form-group sizing="large">
+										<label for="gztm" text="工装条码：" layoutconstraint="md:3" />
+										<text name="gztm" onchange="queryGzxx" layoutconstraint="md:8" />
+									</form-group>
+									<form-group sizing="large">
+										<label for="gzmc" text="工装名称：" layoutconstraint="md:3" />
+										<text name="gzmc" readonly="true" layoutconstraint="md:8" />
+									</form-group>
+									<form-group sizing="large">
+										<label for="wllbmc" text="工装类别：" layoutconstraint="md:3" />
+										<text name="wllbmc" readonly="true" layoutconstraint="md:8" />
+									</form-group>
+									<form-group sizing="large">
+										<label for="gzgg" text="工装规格：" layoutconstraint="md:3" />
+										<text name="gzgg" readonly="true" layoutconstraint="md:8" />
+									</form-group>
+									<form-group sizing="large">
+										<label for="gzsdwz" text="送达位置：" layoutconstraint="md:3" />
+										<text name="gzsdwz" readonly="true" layoutconstraint="md:8" />
+									</form-group>
+									<bunch  hidden="true">
+										<form-group sizing="large">
+											<label for="gzsdtm" text="送达位置条码：" layoutconstraint="md:3" />
+											<text name="gzsdtm" onchange="changesdtm" layoutconstraint="md:8" />
+										</form-group>
+										<form-group sizing="large">
+											<label for="wltm" text="物料条码：" layoutconstraint="md:3" />
+											<text name="wltm" layoutconstraint="md:8" />
+										</form-group>
+									</bunch>
+								</bunch>
+								<bunch layoutconstraint="md:12;sm:12;" name = "divbkg" hidden="true">
+									<!-- <form-group sizing="large">
+										<label for="jgcxmc" text="加工程序名称：" layoutconstraint="md:3" />
+										<text name="jgcxmc" readonly="true" layoutconstraint="md:8" />
+									</form-group> -->
+									<form-group sizing="large">
+									 	<label for="gxzmc" text="工序组名称：" layoutconstraint="md:3" />
+										<text name="gxzmc" readonly="true" layoutconstraint="md:8" />
+									</form-group>
+									<!-- <form-group sizing="large">
+										<bunch layoutconstraint="md-offset:4;sm-offset:4">
+											<plaintext name="msg" context="danger" type="strong" lead="true" />
+											<plaintext name="returntime" context="danger" type="strong" lead="true" />
+										</bunch>
+									</form-group> -->
+								</bunch>
+								<bunch layoutconstraint="md:12;sm:12;" name = "divbg" hidden="true">
+									<form-group sizing="large">
+										<label for="ncbgsl" text="NC报工数量：" layoutconstraint="md:3" />
+										<text name="ncbgsl" layoutconstraint="md:8" readonly="true" validate="{min:0,number:true,digits:true}" />
+									</form-group>
+									<form-group sizing="large">
+										<label for="ybgsl" text="已报工数量：" layoutconstraint="md:3" />
+										<text name="ybgsl" layoutconstraint="md:8" readonly="true" validate="{min:0,number:true,digits:true}" />
+									</form-group>
+									<form-group sizing="large">
+										<label for="bgsl" text="合格数量：" layoutconstraint="md:3" />
+										<keyboard name="bgsl" type="custom" layoutconstraint="md:8" sizing="large" validate="{min:0,number:true,digits:true}">
+											<keyset name="normal">
+												<attribute name="value">
+												<![CDATA[
+													'1 2 3 4 5 6 ',
+													  '7 8 9 0 . Φ',
+													  '{bksp} {clear} {cancel}'
+												]]>
+												</attribute>
+											</keyset>
+										</keyboard>										
+									</form-group>
+									<form-group sizing="large">
+										<label for="bfgf" text="工废数量：" layoutconstraint="md:3" />
+										<keyboard name="bfgf" type="custom" layoutconstraint="md:8" sizing="large" validate="{min:0,number:true,digits:true}">
+											<keyset name="normal">
+												<attribute name="value">
+												<![CDATA[
+													'1 2 3 4 5 6 ',
+													  '7 8 9 0 . Φ',
+													  '{bksp} {clear} {cancel}'
+												]]>
+												</attribute>
+											</keyset>
+										</keyboard>
+									</form-group>
+									<form-group sizing="large">
+										<label for="bflf" text="料废数量：" layoutconstraint="md:3" />
+										<keyboard name="bflf" type="custom" layoutconstraint="md:8" sizing="large" validate="{min:0,number:true,digits:true}">
+											<keyset name="normal">
+												<attribute name="value">
+												<![CDATA[
+													'1 2 3 4 5 6 ',
+													  '7 8 9 0 . Φ',
+													  '{bksp} {clear} {cancel}'
+												]]>
+												</attribute>
+											</keyset>
+										</keyboard>
+									</form-group>
+									<bunch   hidden="true">
+										<form-group sizing="large">
+											<label for="bfsl" text="报废数量：" layoutconstraint="md:3" />
+											<text name="bfsl" layoutconstraint="md:8" validate="{min:0,digits:true}" />
+										</form-group>
+									</bunch>
+								</bunch>
+								<bunch layoutconstraint="md:12;sm:12;" name = "divsbgj"  hidden="true">
+									<form-group sizing="large">
+										<label for="sbbh" text="设备条码：" layoutconstraint="md:3" />
+										<text name="sbbh" onchange="querysbgjByScan" layoutconstraint="md:8" />
+									</form-group>
+									<form-group sizing="large">
+										<label for="sbmc" text="设备名称：" layoutconstraint="md:3" />
+										<text name="sbmc" readonly="true" layoutconstraint="md:8" />
+									</form-group>
+									<form-group sizing="large">
+										<label for="sblxmc" text="设备类型：" layoutconstraint="md:3" />
+										<text name="sblxmc" readonly="true" layoutconstraint="md:8" />
+									</form-group>
+								</bunch>
+								<bunch layoutconstraint="md:12;sm:12;" name = "divgzgj"  hidden="true">
+									<form-group sizing="large">
+										<label for="sbtm" text="设备条码：" layoutconstraint="md:3;"
+											sizing="large" />
+										<text name="sbtm" onchange="querySbxx" layoutconstraint="md:8" />
+										<bunch layoutconstraint="md-offset:4;sm-offset:4">
+											<bunch layoutconstraint="md:12">
+												<label for="zw21" layoutconstraint="md:2" />
+											</bunch>
+											<bunch layoutconstraint="md:12">
+												<label for="zw22" layoutconstraint="md:2" />
+											</bunch>
+											<bunch layoutconstraint="md:12">
+												<label for="zw23" layoutconstraint="md:2" />
+											</bunch>
+										</bunch>
+									</form-group>
+									<bunch layoutconstraint="md:3;md-offset:2;">
+										<image name="image_dj" popshow="false" onClick="isSelect_image_dj"></image>
+										<hidden name="hiddendj" bind="pics.picDj"></hidden>
+										<hidden name="hiddendj_bk" bind="pics.picDj_bk"></hidden>
+									</bunch>
+									<bunch layoutconstraint="md:3">
+										<image name="image_jj" popshow="false" onClick="isSelect_image_jj"></image>
+										<hidden name="hiddenjj" bind="pics.picJj"></hidden>
+										<hidden name="hiddenjj_bk" bind="pics.picJj_bk"></hidden>
+									</bunch>
+									<bunch layoutconstraint="md:3">
+										<image name="image_lj" popshow="false" onClick="isSelect_image_lj"></image>
+										<hidden name="hiddenlj" bind="pics.picLj"></hidden>
+										<hidden name="hiddenlj_bk" bind="pics.picLj_bk"></hidden>
+									</bunch>
+									<form-group sizing="large">
+										<bunch layoutconstraint="md-offset:4;sm-offset:4">
+											<bunch layoutconstraint="md:12">
+												<label for="zw21" layoutconstraint="md:2" />
+											</bunch>
+											<bunch layoutconstraint="md:12">
+												<label for="zw22" layoutconstraint="md:2" />
+											</bunch>
+											<bunch layoutconstraint="md:12">
+												<label for="zw23" layoutconstraint="md:2" />
+											</bunch>
+										</bunch>
+									</form-group>
+								</bunch>
+								<bunch layoutconstraint="md:12"   hidden="true" name="divhid">
+									<hidden name="wllbdm"></hidden>
+									<hidden name="returnnull" value="0"></hidden>
+									<hidden name="flag" value="0"></hidden>
+									<hidden name="sdorjs" value="sd"></hidden>
+									<hidden name="ljbh"></hidden>
+									<hidden name="ljmc"></hidden>
+									<hidden name="pcbh"></hidden>
+									<hidden name="pcmc"></hidden>
+									<hidden name="gxmc"></hidden>
+									<hidden name="scrwbh"></hidden>
+									<hidden name="jgsl"></hidden>
+									<hidden name="jhkssj"></hidden>
+									<hidden name="jhjssj"></hidden>
+									<hidden name="sdtmflag" value="0"></hidden>	
+									<hidden name="gdid"></hidden>
+									<hidden name="pcid"></hidden>
+									<hidden name="scrwid"></hidden>
+									<hidden name="gxid"></hidden>
+									<hidden name="gxbh"></hidden>
+									<hidden name="sbid"></hidden>
+									<hidden name="jgdyid"></hidden>
+									<hidden name="hxtznr"></hidden>
+									<hidden name="scrwbh"></hidden>
+									<hidden name="gdybgsl"></hidden>
+									<hidden name="ljid"></hidden>
+									<hidden name="sbwz"></hidden>
+									<hidden name="ncbgsl"></hidden>
+									<hidden name="returnstatue" value=''></hidden>
+									<hidden name="sblxid"></hidden>
+									<hidden name="selectdj" value="0"></hidden>
+									<hidden name="selectjj" value="0"></hidden>
+									<hidden name="selectlj" value="0"></hidden>
+								</bunch>
+							</form-body>
+							<form-actions>
+								<bunch layoutconstraint="md:3;md-offset:3;sm-offset:3">
+									<button name="wlsdfh" label="返回" type="button" onClick="ALLReturnIndex" sizing="middle"></button>
+								</bunch>
+								<bunch layoutconstraint="md:3">
+									<button name="wlsdcz" label="重置" type="button" onClick="ALLCustomreset" sizing="middle"></button>
+								</bunch>
+								<bunch layoutconstraint="md:3"  name = "divaczj"  hidden="true">
+									<button name="zjqd" label="确定" type="button" onClick="saveZjjg"	sizing="middle"></button>
+								</bunch>
+								<bunch layoutconstraint="md:3"  name = "divacwlsd"  hidden="true">
+									<button name="wlsdqd" label="确定" type="button" onClick="saveWlsd"	sizing="middle"></button>
+								</bunch>
+								<bunch layoutconstraint="md:3"  name = "divacgzsd"  hidden="true">
+									<button name="gzsdqd" label="确定" type="button" onClick="saveGzsd"	sizing="middle"></button>
+								</bunch>
+								<bunch layoutconstraint="md:3"  name = "divacbkg"   hidden="true">
+									<button name="bkgqd" label="确定" type="button" onClick="saveBkg" sizing="middle"></button>
+								</bunch>
+								<bunch layoutconstraint="md:3"  name = "divacbg"  hidden="true" >
+									<button name="bgqd" label="确定" type="button" onClick="saveBg" 	sizing="middle"></button>
+								</bunch>
+								<bunch layoutconstraint="md:3"  name = "divacqlgj"   hidden="true"  >
+									<button name="qlgjqd" label="确定" type="button" onClick="saveQlgj"	sizing="middle"></button>
+								</bunch>
+								<bunch layoutconstraint="md:3"  name = "divacsbgj"    hidden="true" >
+									<button name="sbgjqd" label="确定" type="button" onClick="saveSbgj"	sizing="middle"></button>
+								</bunch>
+								<bunch layoutconstraint="md:3"  name = "divacgzgj"    hidden="true">
+									<button name="gzgjqd" label="确定" type="button" onClick="saveGzbj"	sizing="middle"></button>
+								</bunch>
+							</form-actions>
+						</form>
+					</bunch>
+				
+				</panel-body>
+			</panel>
+		</bunch>
+		
+	</bunch>
+	<attribute name="javascript">
+		<![CDATA[
+			var nowpage ;
+		
+			function fzjOnClick() {
+				ui.button('fzjBtn').active();
+				ui.button('zjyBtn').unactive();
+				ui.button('sjBtn').active();
+				ui.button('xjBtn').unactive();
+				ui.button('mjBtn').unactive();
+				ui.button('hxBtn').unactive();
+				ui.hidden('s_fzj').val('10');
+				ui.table("table_zj").search({s_fzj:ui.hidden('s_fzj').val(),s_jylx:ui.hidden('s_jylx').val(),s_gxzid:ui.hidden("s_gxzid").val()});
+				ui.bunch('divzjy').hide();
+			}
+			function zjyOnClick() {
+				ui.button('fzjBtn').unactive();
+				ui.button('zjyBtn').active();
+				ui.button('sjBtn').active();
+				ui.button('xjBtn').unactive();
+				ui.button('mjBtn').unactive();
+				ui.button('hxBtn').unactive();
+				ui.hidden('s_fzj').val('20');
+				ui.table("table_zj").search({s_fzj:ui.hidden('s_fzj').val(),s_jylx:ui.hidden('s_jylx').val(),s_gxzid:ui.hidden("s_gxzid").val()});
+				ui.bunch('divzjy').show();
+			}
+			function sjOnClick() {
+				ui.button('sjBtn').active();
+				ui.button('xjBtn').unactive();
+				ui.button('mjBtn').unactive();
+				ui.button('hxBtn').unactive();
+				if('30'==ui.hidden('s_fzj').val())
+				{
+					ui.button('fzjBtn').active();
+					ui.button('zjyBtn').unactive();
+				}
+				ui.hidden('s_jylx').val('10');
+				ui.table("table_zj").search({s_fzj:ui.hidden('s_fzj').val(),s_jylx:ui.hidden('s_jylx').val(),s_gxzid:ui.hidden("s_gxzid").val()});
+			}
+			function xjOnClick() {
+				ui.button('sjBtn').unactive();
+				ui.button('xjBtn').active();
+				ui.button('mjBtn').unactive();
+				ui.button('hxBtn').unactive();
+				if('30'==ui.hidden('s_fzj').val())
+				{
+					ui.button('fzjBtn').active();
+					ui.button('zjyBtn').unactive();
+				}
+				ui.hidden('s_jylx').val('20');
+				ui.table("table_zj").search({s_fzj:ui.hidden('s_fzj').val(),s_jylx:ui.hidden('s_jylx').val(),s_gxzid:ui.hidden("s_gxzid").val()});
+			}
+			function mjOnClick() {
+				ui.button('sjBtn').unactive();
+				ui.button('xjBtn').unactive();
+				ui.button('mjBtn').active();
+				ui.button('hxBtn').unactive();
+				if('30'==ui.hidden('s_fzj').val())
+				{
+					ui.button('fzjBtn').active();
+					ui.button('zjyBtn').unactive();
+				}
+				ui.hidden('s_jylx').val('30');
+				ui.table("table_zj").search({s_fzj:ui.hidden('s_fzj').val(),s_jylx:ui.hidden('s_jylx').val(),s_gxzid:ui.hidden("s_gxzid").val()});
+			}
+			function hxOnClick() {
+				ui.button('fzjBtn').unactive();
+				ui.button('zjyBtn').unactive();
+				ui.button('sjBtn').unactive();
+				ui.button('xjBtn').unactive();
+				ui.button('mjBtn').unactive();
+				ui.button('hxBtn').active();
+				
+				ui.hidden('s_fzj').val('30');
+				ui.table("table_zj").search({s_fzj:ui.hidden('s_fzj').val(),s_jylx:ui.hidden('s_jylx').val(),s_gxzid:ui.hidden("hiddenhxtzgxz1").val()});
+				ui.bunch('divzjy').hide();
+				
+			}
+			
+			function table_ZJClickrow(rowid,status) {
+				ui.table("table_zj").editRow(rowid);
+			}
+			
+			function saveZjjg(){
+				var rows= ui.table("table_zj").getSelectedRows();
+				if(rows.length<=0)
+				{
+					ui.alert("请先选择一条数据");
+					return false;
+				}
+				var editRows = ui.table("table_zj").getEditRowsData(rows);
+				for(var k in editRows){
+					editRows[k].ljid = ui.hidden("s_ljid").val();
+		            editRows[k].gdid = ui.hidden("s_gdid").val();
+		            editRows[k].scrwid = ui.hidden("s_scrwid").val();
+		            editRows[k].gxzid = ui.hidden("s_gxzid").val();
+		            editRows[k].xh = ui.hidden("s_xh").val();
+		            editRows[k].jgdyid = ui.hidden("s_jgdyid").val();
+		            editRows[k].sfzj = ui.hidden('s_fzj').val();
+		            editRows[k].zjbz = ui.hidden('s_jylx').val();
+		            editRows[k].zjry = ui.text('zjry').val();
+				}
+				
+				$.ajax({
+		             type: "POST",
+		             url:  ui.getRealUrl("save_zjjg"),
+		             async: false,
+		             data: {data_list : JSON.stringify(editRows)},
+		             success: function(data){
+		             	ui.table("table_zj").reload();
+		             	ui.success("质检保存成功");
+		             	ALLReturnIndex();
+		             }
+		         });
+			}
+			function hideALLClick() {
+				ui.button('zjBtn').unactive();
+				ui.button('wlsdBtn').unactive();
+				ui.button('gzsdBtn').unactive();
+				ui.button('bkgBtn').unactive();
+				ui.button('bgBtn').unactive();
+				ui.button('hxsqBtn').unactive();
+				ui.button('qlgjBtn').unactive();
+				ui.button('sbgjBtn').unactive();
+				ui.button('wlgjBtn').unactive();
+			
+				ui.bunch('divxxxx').hide();
+				ui.bunch('divzj').hide();
+				ui.bunch('divwlsdlckh').hide();
+				ui.bunch('divqlgjlckh').hide();
+				ui.bunch('divwl').hide();
+				ui.bunch('divownwlsd').hide();
+				ui.bunch('divgzsd').hide();
+				ui.bunch('divbkg').hide();
+				ui.bunch('divbg').hide();
+				ui.bunch('divsbgj').hide();
+				ui.bunch('divgzgj').hide();
+				$('#gxtz').hide();
+				 
+				ui.bunch('divaczj').hide();
+				ui.bunch('divacwlsd').hide();
+				ui.bunch('divacgzsd').hide();
+				ui.bunch('divacbkg').hide();
+				ui.bunch('divacbg').hide();
+				ui.bunch('divacqlgj').hide();
+				ui.bunch('divacsbgj').hide();
+				ui.bunch('divacgzgj').hide();
+				
+				ALLCustomreset();
+			}
+			
+			//切换页面开始
+			function zjOnClick() {
+				hideALLClick();
+				this.active();
+				ui.bunch('divform').show();
+				ui.bunch('divzj').show();
+				ui.bunch('divaczj').show();
+				ui.table('table_zj').resize();
+				ui.button('fzjBtn').active();
+				ui.button('zjyBtn').unactive();
+				ui.button('sjBtn').active();
+				ui.button('xjBtn').unactive();
+				ui.button('mjBtn').unactive();
+				ui.button('hxBtn').unactive();
+				if(''!=ui.hidden("s_gxzid").val())
+				{
+					ui.table("table_zj").search({s_fzj:10,s_jylx:10,s_gxzid:ui.hidden("s_gxzid").val()});
+				}else{
+					//ui.error("请报开工！");
+				}
+				
+			}
+			function wlsdOnClick() {
+				hideALLClick();
+				this.active();
+				ui.bunch('divform').show();
+				ui.bunch('divwlsdlckh').show();
+				ui.bunch('divxxxx').show();
+				ui.bunch('divwl').show();
+				ui.bunch('divownwlsd').show();
+				ui.bunch('divacwlsd').show();
+				$('#gdtm').focus();
+				nowpage = 'gdtm';
+			}
+			function gzsdOnClick() {
+				hideALLClick();
+				this.active();
+				ui.bunch('divform').show();			
+				ui.bunch('divgzsd').show();
+				ui.bunch('divacgzsd').show();
+				$('#gztm').focus();
+				nowpage = 'gztm';
+			}
+			function bkgOnClick() {
+				hideALLClick();
+				this.active();
+				ui.bunch('divform').show();
+				ui.bunch('divwlsdlckh').show();
+				ui.bunch('divwl').show();
+				ui.bunch('divxxxx').show();
+				ui.bunch('divbkg').show();
+				ui.bunch('divacbkg').show();
+				$('#gdtm').focus();
+				nowpage = 'gdtm';
+			}
+			function bgOnClick() {
+				hideALLClick();
+				this.active();
+				ui.bunch('divform').show();
+				ui.bunch('divwlsdlckh').show();
+				ui.bunch('divwl').show();
+				ui.bunch('divxxxx').show();
+				ui.bunch('divbkg').show();
+				ui.bunch('divbg').show();
+				ui.bunch('divacbg').show();
+				$('#gdtm').focus();
+				nowpage = 'gdtm';
+			}
+			function hxsqOnClick() {
+				 if("" == ui.hidden("hiddenhxtzgxz1").val()){
+			    	ui.warn("未找到需要申请的换线要求");
+			    	return;
+			    }
+				 ui.confirm("是否申请换线?", function(data){
+					if(data){
+						saveHxsq();
+					}else{
+						
+					}
+				});
+			}
+			function qlgjOnClick() {
+				hideALLClick();
+				this.active();
+				ui.bunch('divform').show();
+				ui.bunch('divqlgjlckh').show();
+				ui.bunch('divwl').show();
+				ui.bunch('divacqlgj').show();
+				$('#gdhwltm').focus();
+				nowpage = 'gdhwltm';
+			}
+			function sbgjOnClick() {
+				hideALLClick();
+				this.active();
+				ui.bunch('divform').show();
+				ui.bunch('divsbgj').show();
+				ui.bunch('divacsbgj').show();
+				$('#sbbh').focus();
+				nowpage = 'sbbh';
+			}
+			function gzgjOnClick() {
+				hideALLClick();
+				this.active();
+				ui.bunch('divform').show();
+				ui.bunch('divgzgj').show();
+				ui.bunch('divacgzgj').show();
+				$('#sbtm').focus();
+				nowpage = 'sbtm';
+			}
+			//切换页面结束
+			
+			//返回
+			function ALLReturnIndex() {
+				hideALLClick();
+				ui.bunch('divform').hide();
+				$('#gxtz').show();
+			}
+			//重置开始
+			function ALLCustomreset() {
+				ui.form('form-wlsd').reset();
+				$('#'+nowpage).focus();
+			}
+			var sbdjymbz = '1';
+			//刀具寿命清零
+			function sbmcclick1() {
+				ui.bunch('divdjsm1').show();
+				ui.bunch('divdjsm2').hide();
+				ui.bunch('divdjsm3').hide();
+				ui.hidden("hiddenzsbid").val(ui.hidden("hiddenzsbid1").val());
+				sbdjymbz = '1';
+			}
+			function sbmcclick2() {
+				ui.bunch('divdjsm1').hide();
+				ui.bunch('divdjsm2').show();
+				ui.bunch('divdjsm3').hide();
+				ui.hidden("hiddenzsbid").val(ui.hidden("hiddenzsbid2").val());
+				sbdjymbz = '2';
+			}
+			function sbmcclick3() {
+				ui.bunch('divdjsm1').hide();
+				ui.bunch('divdjsm2').hide();
+				ui.bunch('divdjsm3').show();
+				ui.hidden("hiddenzsbid").val(ui.hidden("hiddenzsbid3").val());
+				sbdjymbz = '3';
+			}
+			function djsmql1() {
+				ui.hidden("zdw").val('T1');
+				djsmql();
+			}
+			function djsmql2() {
+				ui.hidden("zdw").val('T2');
+				djsmql();
+			}
+			function djsmql3() {
+				ui.hidden("zdw").val('T3');
+				djsmql();
+			}
+			function djsmql4() {
+				ui.hidden("zdw").val('T4');
+				djsmql();
+			}
+			function djsmql5() {
+				ui.hidden("zdw").val('T5');
+				djsmql();
+			}
+			function djsmql6() {
+				ui.hidden("zdw").val('T6');
+				djsmql();
+			}
+			function djsmql7() {
+				ui.hidden("zdw").val('T7');
+				djsmql();
+			}
+			function djsmql8() {
+				ui.hidden("zdw").val('T8');
+				djsmql();
+			}
+			function djsmql9() {
+				ui.hidden("zdw").val('T9');
+				djsmql();
+			}
+			function djsmql10() {
+				ui.hidden("zdw").val('T10');
+				djsmql();
+			}
+			function djsmql11() {
+				ui.hidden("zdw").val('T11');
+				djsmql();
+			}
+			function djsmql12() {
+				ui.hidden("zdw").val('T12');
+				djsmql();
+			}
+			function djsmql() {
+				$.ajax({
+	                type: "POST",
+	                url: ui.getRealUrl("/sbgzbjac/djsmql"),
+	                async: false,
+	                data: {
+	                    sbid: ui.hidden("hiddenzsbid").val(),
+	                    dw: ui.hidden("zdw").val()
+	                },
+	                success: function(data) {
+	                
+	               		$('#sbdw'+sbdjymbz+ui.hidden('zdw').val()).text(0);
+	                    ui.success("清零成功", "提示");
+	                },
+	                error: function(data) {
+	                    ui.error("清零失败！");
+	                }
+	            });
+			}
+			
+		
+			
+			function blur_sdtm() {
+			    sdtm = $('#sdtm').val();
+			    sbbh = $('#sbbh').val();
+			    if (sbbh == sdtm && sbbh != "") {
+			        //正确图片显示
+			        $('#sdtm').blur();
+			    } else {
+			        //错误图片显示
+			    }
+			}
+			function querywlsdByScan() {
+			    $("#form-wlsd").attr("action", "queryByWlsd");
+			    ui.form("form-wlsd").ajaxSubmit(function() {},
+			    function(data) {
+			        if (data.returnstatus != null && '' != data.returnstatus.returnstatue) {
+			        	ALLCustomreset();
+			        	ui.alert(data.returnstatus.returnstatue);
+			       	 	ui.hidden("returnstatue").val(data.returnstatus.returnstatue);
+			        } else {
+			            ui.text("wlbh").val(data.wlbh);
+			            ui.text("wlmc").val(data.wlmc);
+			            ui.text("jgsl").val(data.jgsl);
+			            ui.text("pcbh").val(data.pcbh);
+			            ui.text('kssj').val(data.jgkssj);
+			            ui.text("sdwz").val(data.sbwz);
+			            ui.text("sl").val(data.ysdsl);
+			            ui.hidden("scrwbh").val(data.scrwbh);
+			            ui.hidden("wllbdm").val(data.wllbdm);
+			            ui.hidden("pcmc").val(data.pcmc);
+			            ui.hidden("ljmc").val(data.ljmc);
+			            ui.hidden("ljbh").val(data.ljbh);
+			            ui.hidden("gxid").val(data.gxid);
+			            ui.hidden("gxbh").val(data.gxbh);
+			            ui.hidden("gdid").val(data.gdid);
+			            ui.hidden("gxmc").val(data.gxmc);
+			            ui.hidden("jgsl").val(data.jgsl);
+			            ui.hidden("jhkssj").val(data.jhkssj);
+			            ui.hidden("jhjssj").val(data.jhjssj);
+			            ui.hidden("returnnull").val("1");
+			            ui.hidden("scrwid").val(data.scrwid);
+			            ui.hidden("pcid").val(data.pcid);
+			            ui.text('gxzmc').val(data.gxzmc);
+			            //ui.text("jgcxmc").val(data.cxmc);
+			            ui.text("ybgsl").val(data.gdybgsl);
+			            ui.hidden("sbid").val(data.sbid);
+			            ui.hidden("gdybgsl").val(data.gdybgsl);
+			            ui.hidden("ncbgsl").val(data.ncbgsl);
+			            ui.hidden("returnnull").val("1");
+			            ui.text("sbbh").val(data.sbbh);
+			            
+			            ui.plaintext("zljmc").text(data.ljmc);
+			            ui.plaintext("zgxzmc").text(data.gxzmc);
+			            ui.plaintext("zlckh").text(ui.text("gdtm").val());
+			            if('undefined'!=(''+data.gdybgsl))
+			            {
+			            	ui.plaintext("zwcsl").text(data.gdybgsl+'/'+data.jgsl);
+			            }
+			            if('undefined'!=(''+data.gxtztpurl1))
+			            {
+			            	ui.image("gxtztp1").attr("src",data.gxtztpurl1);
+			            	ui.bunch('divgxtz1').show();
+			            }
+			            if('undefined'!=(''+data.gxtztpurl2))
+			            {
+			            	ui.image("gxtztp2").attr("src",data.gxtztpurl2);
+			            	ui.bunch('divgxtz2').show();
+			            }
+			            if('undefined'!=(''+data.gxtztpurl3))
+			            {
+			            	ui.image("gxtztp3").attr("src",data.gxtztpurl3);
+			            	ui.bunch('divgxtz3').show();
+			            }
+			            
+			            
+			            
+			        }
+			    },
+			    function(data) {
+			        ui.hidden("returnnull").val("0");
+			        ui.alert("查询失败");
+			    });
+			
+			}
+			function saveWlsd() {
+				$("#form-wlsd").attr("action", "saveWlsd");
+			    var btn = this;
+			    gdtm = $('#gdtm').val();
+			    sl = $('#sl').val();
+			    sbbh = $('#sbbh').val();
+			    sdtm = $('#wlsdtm').val();
+			    returnnull = $('#returnnull').val();
+			    returnstatue = $('#returnstatue').val();
+			    if(gdtm == ""){
+			    	ui.alert("请输入流程卡号");
+			    	return;
+			    }
+			    if(returnstatue != ''){
+	       	 		ui.alert(returnstatue);
+	       	 		return;
+			    } 
+			    //if(sdtm == ""){
+			    //	ui.alert("请输入送达位置条码");
+			    //	return;
+			   // }
+			    //if(sbbh != sdtm){
+			    //	ui.alert("流程卡信息与送达位置不匹配，请确认后重新输入");
+			    //	return;
+			   // } 
+			    if(Number(sl) <= 0){
+			    	ui.alert("送达数量须大于0");
+			    	return;
+			    }
+		        ui.form("form-wlsd").ajaxSubmit(function() {
+		            //ui.success("准备提交");
+		            //btn.attr("disabled", true);
+		        },
+		        function(data) {
+		            ui.success(data.msg, "提示");
+		            ALLReturnIndex();
+		        },
+		        function(data) {
+		            ui.error("保存失败！");
+		        });
+			}
+			function queryGzxx() {
+			    $("#form-wlsd").attr("action", "queryGzxx");
+			    ui.form("form-wlsd").ajaxSubmit(function() {},
+			    function(data) {
+			        if (data == null || data == 'null') {
+			            ALLCustomreset();
+			        } else {
+			            ui.text("gzmc").val(data.wlmc);
+			            ui.text("gzgg").val(data.wlgg);
+			            ui.text("gzsdwz").val(data.gzsdwz);
+			            ui.text("gzsdtm").val(data.gzsdtm);
+			            ui.text("wllbmc").val(data.wllbmc);
+			            ui.hidden("wllbdm").val(data.wllbdm);
+			            ui.hidden("returnnull").val("1");
+			            ui.hidden("wltm").val(data.wltm);
+			            $('#sdtm').focus();
+			        }
+			    },
+			    function(data) {
+			        ui.hidden("returnnull").val("0");
+			        ui.alert("查询失败");
+			    });
+			}
+			
+			function changesdtm() {
+			 $("#form-wlsd").attr("action", "querySdtm");
+			    ui.form("form-wlsd").ajaxSubmit(function() {},
+			    function(data) {
+			    	if (data == null || data == 'null') {
+			            ui.hidden("sdtmflag").val("0");
+			        } else {
+			        	ui.hidden("sdtmflag").val(data.sdtmflag);
+			        	ui.text("sbmc").val(data.sbmc);
+		            	$('#sdtm').blur();
+			        }
+			    },
+			    function(data) {
+			    	ui.hidden("sdtmflag").val("0");
+			    });
+			}
+			
+			function saveGzsd() {
+				$("#form-wlsd").attr("action", "saveGzsd");
+			    var btn = this;
+			    sdtm = $('#sdtm').val();
+			    gztm = $('#gztm').val();
+			    sdtmflag = $('#sdtmflag').val();
+			    returnnull = $('#returnnull').val();
+			    if(gztm == ""){
+			     	ui.alert("请输入工装条码");
+			     	return;
+			    }
+			    if(returnnull != 1){
+			     	ui.alert("找不到该工装信息");
+			     	return;
+			    }
+			    //if(sdtm == ""){
+			     //	ui.alert("请输入送达位置条码");
+			    // 	return;
+			    //}
+			    //if(sdtmflag != "1"){
+			    // 	ui.alert("找不到送达位置条码信息");
+			    // 	return;
+			   // }
+		        ui.form("form-wlsd").ajaxSubmit(function() {
+		            //ui.success("准备提交");
+		            //btn.attr("disabled", true);
+		        },
+		        function(data) {
+		            ui.success(data.msg, "提示");
+		            ALLReturnIndex();
+		        },
+		        function(data) {
+		            ui.error("保存失败！");
+		        });
+			}
+		
+		
+			function saveBkg() {
+				$("#form-wlsd").attr("action", "saveBkg");
+			    var btn = this;
+			    gdtm = $('#gdtm').val();
+			    returnnull = $('#returnnull').val();
+			    returnstatue = $('#returnstatue').val();
+			    if(gdtm == ""){
+			   	 	ui.alert("请输入流程卡号");
+			   	 	return;
+			    }
+			    if(returnstatue != ''){
+	       	 		ui.alert(returnstatue);
+	       	 		return;
+			    } 
+			    //if(returnnull != 1){
+			   	 	//ui.alert("找不到该流程卡信息");
+			   	 	//return;
+			    //}
+		        ui.form("form-wlsd").ajaxSubmit(function() {
+		            //ui.success("准备提交");
+		            //btn.attr("disabled", true);
+		        },
+		        function(data) {
+		        	ui.hidden("s_ljid").val(ui.hidden("gdid").val());
+		            ui.hidden("s_gdid").val(ui.hidden("gdid").val());
+		            ui.hidden("s_scrwid").val(ui.hidden("scrwid").val());
+		            ui.hidden("s_gxzid").val(ui.hidden("gxid").val());
+		            ui.hidden("s_xh").val(ui.text("gdtm").val());
+		            ui.hidden("s_jgdyid").val(ui.hidden("sbid").val());
+		            ui.success(data.msg, "提示");
+		            ALLReturnIndex();
+		        },
+		        function(data) {
+		            ui.error("保存失败！");
+		            //btn.attr("disabled", false);
+		        });
+			}
+			
+			
+		
+		function saveBg() {
+			$("#form-wlsd").attr("action", "saveBg");
+		    var btn = this;
+		    gdtm = $('#gdtm').val();
+		    returnnull = $('#returnnull').val();
+		    returnstatue = $('#returnstatue').val();
+		    var bfgf = Number($('#bfgf').val());
+		    var bflf = Number($('#bflf').val())
+		    $('#bfsl').val(bfgf + bflf);
+		    bgsl = $('#bgsl').val();
+		    bfsl = $('#bfsl').val();
+		    
+		    if(gdtm == ""){
+		     	ui.alert("请输入流程卡号");
+		     	return;
+		    }
+		    if(returnstatue != ''){
+	       	 		ui.alert(returnstatue);
+	       	 		return;
+			} 
+		    //if(returnnull != 1){
+		     	//ui.alert("找不到该流程卡信息");
+		     	//return;
+		    //}
+		    
+		    var bgsl = Number($('#bgsl').val());
+		    if( bgsl < 0 ){
+		    	ui.alert("合格数量不可小于0");
+		     	return;
+		    }
+		    if( /^[+-]?[1-9]?[0-9]*\.[0-9]*$/.test(bgsl)){
+		    	ui.alert("合格数量不能为小数");
+		     	return;
+		    }
+		    
+		    
+		    var bfgf = Number($('#bfgf').val());
+		    if( bfgf < 0 ){
+		    	ui.alert("工废数量不可小于0");
+		     	return;
+		    }
+		    if( /^[+-]?[1-9]?[0-9]*\.[0-9]*$/.test(bfgf)){
+		    	ui.alert("工废数量不能为小数");
+		     	return;
+		    }
+		    var bflf = Number($('#bflf').val())
+		    if( bflf < 0 ){
+		    	ui.alert("料废数量不可小于0");
+		     	return;
+		    }
+		    if( /^[+-]?[1-9]?[0-9]*\.[0-9]*$/.test(bflf)){
+		    	ui.alert("料废数量不能为小数");
+		     	return;
+		    }
+		    
+		    if(bgsl == 0 && bfgf == 0 && bflf ==0){
+		    	ui.alert("请输入合格数量、工废或者料废数量");
+		     	return;
+		    }
+		    
+		    
+	        ui.form("form-wlsd").ajaxSubmit(function() {
+	        },
+	        function(data) {
+	            ui.success(data.msg, "提示");
+	            ui.text("gdtm").val("");
+	            ui.text("bgsl").val("");
+	            ui.text("bfsl").val("");
+	            ALLCustomreset();
+	            $('#gdtm').focus();
+	        },
+	        function(data) {
+	            ui.error("保存失败！");
+	        });
+		}
+		
+		function cleanEmpty() {
+		    ui.text("wlbh").val("");
+		    ui.text("wlmc").val("");
+		    ui.text("jgsl").val("");
+		    ui.text("ybgsl").val("");
+		    ui.text("pcbh").val("");
+		    $('#image_gx').attr("src", "");
+		    ui.text('kssj').val("");
+		    ui.hidden("sbid").val("");
+		    ui.hidden("gxbh").val("");
+		    ui.hidden("ljbh").val("");
+		    ui.hidden("scrwbh").val("");
+		    ui.hidden("gdybgsl").val("");
+		    ui.hidden("ljmc").val("");
+		    ui.hidden("gxmc").val("");
+		    ui.hidden("returnstatue").val("");
+		    ui.hidden("pcmc").val("");
+		    ui.hidden("sbbh").val("");
+		    ui.hidden("jhkssj").val("");
+		    ui.hidden("jhjssj").val("");
+		    ui.hidden("gdid").val("");
+		    ui.hidden("returnnull").val("0");
+		}
+		
+		
+		
+		function queryqlbjByScan() {
+			    $("#form-wlsd").attr("action", "queryByGdhwltm");
+			    ui.form("form-wlsd").ajaxSubmit(function() {
+			    },
+			    function(data) {
+			        if (data.returnstatue != null) {
+			        	ALLCustomreset();
+			        	ui.alert(data.returnstatue);
+			       	 	ui.hidden("returnstatue").val(data.returnstatue);
+			        } else {
+			        	//if(data.ljurl == null || data.ljurl == 'null'){
+			        	//} else {
+			        	//	ui.image("image_lj").attr("src", data.ljurl);
+			        	//}
+			            ui.text("wlbh").val(data.wlbh);
+			            ui.text("wlmc").val(data.wlmc);
+			            ui.text("scrwph").val(data.scrwph);
+			            ui.hidden("pcmc").val(data.pcmc);
+			            ui.hidden("pcbh").val(data.pcbh);
+			            ui.hidden("ljmc").val(data.ljmc);
+			            ui.hidden("ljbh").val(data.ljbh);
+			            ui.text("sbbh").val(data.sbbh);
+			            ui.hidden("sbwz").val(data.sbwz);
+			            ui.hidden("ncbgsl").val(data.ncbgsl);
+			            ui.hidden("ljid").val(data.ljid);
+			            ui.hidden("scrwbh").val(data.scrwbh);
+			            ui.hidden("returnstatue").val("");
+			            ui.hidden("gxmc").val(data.gxmc);
+			            ui.hidden("jgsl").val(data.jgsl);
+			            ui.hidden("jhkssj").val(data.jhkssj);
+			            ui.hidden("jhjssj").val(data.jhjssj);
+			            ui.hidden("returnnull").val("1");
+			            $('#gdhwltm').blur();
+			        }
+			    },
+			    function(data) {
+			        ui.hidden("returnnull").val("0");
+			        ui.alert("查询失败");
+			    });
+			}
+			function saveHxsq() {
+				$("#form-wlsd").attr("action", "saveHxsq");
+			    var btn = this;
+			    if("" == ui.hidden("hiddenhxtzgxz1").val()){
+			    	ui.alert("未找到需要申请的换线要求");
+			    	return;
+			    }else{
+			    	ui.hidden("gxid").val(ui.hidden("hiddenhxtzgxz1").val());
+			    	ui.hidden("hxtznr").val(ui.plaintext("hxtz1").text());
+
+			        ui.form("form-wlsd").ajaxSubmit(function() {
+	
+			        },
+			        function(data) {
+			            ui.success(data.msg, "提示");
+			            ui.text("gdhwltm").val("");
+			            ALLCustomreset();
+			            $('#gdhwltm').focus();
+			        },
+			        function(data) {
+			            ui.error("保存失败！");
+			        });
+			    }
+			}
+			function saveQlgj() {
+				$("#form-wlsd").attr("action", "saveQlgj");
+			    var btn = this;
+			    gdhwltm = $('#gdhwltm').val();
+			    returnnull = $('#returnnull').val();
+			    returnstatue = $('#returnstatue').val();
+			    if(gdhwltm == ""){
+			    	ui.alert("请输入流程卡号");
+			    	return;
+			    }
+			    if(returnstatue != ''){
+	       	 		ui.alert(returnstatue);
+	       	 		return;
+			    } 
+			    //if(returnnull != 1){
+			    	//ui.alert("找不到该流程卡信息");
+			    	//return;
+			    //}
+		        ui.form("form-wlsd").ajaxSubmit(function() {
+		            //ui.success("准备提交");
+		            //btn.attr("disabled", true);
+		        },
+		        function(data) {
+		            ui.success(data.msg, "提示");
+		            ui.text("gdhwltm").val("");
+		            ALLCustomreset();
+		            $('#gdhwltm').focus();
+		        },
+		        function(data) {
+		            ui.error("保存失败！");
+		            //btn.attr("disabled", false);
+		        });
+			}
+			
+			
+			
+		
+		function querysbgjByScan() {
+			    $("#form-wlsd").attr("action", "queryBySbbh");
+			    ui.form("form-wlsd").ajaxSubmit(function() {},
+			    function(data) {
+			        if (data == null || data == 'null') {
+			            ALLCustomreset();
+			        } else {
+			        	//if(data.url == null || data.url == 'null'){
+			        	//} else {
+			        	//	ui.image("image_sb").attr("src", data.url);
+			        	//}
+			            ui.text("sbmc").val(data.sbmc);
+			            ui.text("sblxmc").val(data.sblxmc);
+			            ui.hidden("sblxid").val(data.sblxid);
+			            ui.hidden("returnnull").val("1");
+			            $('#sbbh').blur();
+			        }
+			    },
+			    function(data) {
+			        ui.hidden("returnnull").val("0");
+			        ui.alert("查询失败");
+			    });
+			}
+			
+			function saveSbgj() {
+				$("#form-wlsd").attr("action", "saveSbgj");
+			    var btn = this;
+			    sbbh = $('#sbbh').val();
+			    returnnull = $('#returnnull').val();
+			    if(sbbh == ""){
+			    	ui.alert("请输入设备条码");
+			    	return;
+			    }
+			    if(returnnull != 1){
+			    	ui.alert("找不到该设备信息");
+			    	return;
+			    }
+		        ui.form("form-wlsd").ajaxSubmit(function() {
+		            //ui.success("准备提交");
+		            //btn.attr("disabled", true);
+		        },
+		        function(data) {
+		            ui.success(data.msg);
+		            ui.text("sbbh").val("");
+		            ALLCustomreset();
+		            $('#sbbh').focus();
+		        },
+		        function(data) {
+		            ui.error("保存失败！");
+		            //btn.attr("disabled", false);
+		        });
+			}
+		
+			function isSelect_image_dj() {
+			    selectdj = $('#selectdj').val();
+			    if (selectdj == 0) {
+			        hiddendj_bk = $('#hiddendj_bk').val();
+			        $("#image_dj").attr("src", hiddendj_bk);
+			        ui.hidden("selectdj").val("1");
+			    } else {
+			        hiddendj = $('#hiddendj').val();
+			        $("#image_dj").attr("src", hiddendj);
+			        ui.hidden("selectdj").val("0");
+			    }
+			}
+			
+			function isSelect_image_jj() {
+			    selectjj = $('#selectjj').val();
+			    if (selectjj == 0) {
+			        hiddenjj_bk = $('#hiddenjj_bk').val();
+			        $("#image_jj").attr("src", hiddenjj_bk);
+			        ui.hidden("selectjj").val("1");
+			    } else {
+			        hiddenjj = $('#hiddenjj').val();
+			        $("#image_jj").attr("src", hiddenjj);
+			        ui.hidden("selectjj").val("0");
+			    }
+			}
+			
+			function isSelect_image_lj()
+			{
+			    selectlj = $('#selectlj').val();
+			    if (selectlj == 0) {
+			        hiddenlj_bk = $('#hiddenlj_bk').val();
+			        $("#image_lj").attr("src", hiddenlj_bk);
+			        ui.hidden("selectlj").val("1");
+			    } else {
+			        hiddenlj = $('#hiddenlj').val();
+			        $("#image_lj").attr("src", hiddenlj);
+			        ui.hidden("selectlj").val("0");
+			    }
+			}
+			
+			function testViewReady() {
+				//$('#gxtz').hide();
+			
+			    hiddendj = $('#hiddendj').val();
+			    $("#image_dj").attr("src", hiddendj);
+			
+			    hiddenjj = $('#hiddenjj').val();
+			    $("#image_jj").attr("src", hiddenjj);
+			
+			    hiddenlj = $('#hiddenlj').val();
+			    $("#image_lj").attr("src", hiddenlj);
+			    
+			    $("#image_xj011").attr("src", $('#hiddenimg011').val());
+			    $("#image_xj021").attr("src", $('#hiddenimg021').val());
+			    $("#image_xj012").attr("src", $('#hiddenimg012').val());
+			    $("#image_xj022").attr("src", $('#hiddenimg022').val());
+			    $("#image_xj013").attr("src", $('#hiddenimg013').val());
+			    $("#image_xj023").attr("src", $('#hiddenimg023').val());
+			    $("#image_xj014").attr("src", $('#hiddenimg014').val());
+			    $("#image_xj024").attr("src", $('#hiddenimg024').val());
+			    $("#image_xj015").attr("src", $('#hiddenimg015').val());
+			    $("#image_xj025").attr("src", $('#hiddenimg025').val());
+			    $("#image_xj016").attr("src", $('#hiddenimg016').val());
+			    $("#image_xj026").attr("src", $('#hiddenimg026').val());
+			    $("#image_xj017").attr("src", $('#hiddenimg017').val());
+			    $("#image_xj027").attr("src", $('#hiddenimg027').val());
+			    $("#image_xj018").attr("src", $('#hiddenimg018').val());
+			    $("#image_xj028").attr("src", $('#hiddenimg028').val());
+			    $("#image_xj019").attr("src", $('#hiddenimg019').val());
+			    $("#image_xj029").attr("src", $('#hiddenimg029').val());
+			    
+			    $("#sbmc1").text($('#hiddenzsbmc1').val());
+				$("#sbmc2").text($('#hiddenzsbmc2').val());
+				$("#sbmc3").text($('#hiddenzsbmc3').val());
+				
+			    $("#sbdw1T1").text($('#hiddensbdw1T1').val());
+				$("#sbdw1T2").text($('#hiddensbdw1T2').val());
+				$("#sbdw1T3").text($('#hiddensbdw1T3').val());
+				$("#sbdw1T4").text($('#hiddensbdw1T4').val());
+				$("#sbdw1T5").text($('#hiddensbdw1T5').val());
+				$("#sbdw1T6").text($('#hiddensbdw1T6').val());
+				$("#sbdw1T7").text($('#hiddensbdw1T7').val());
+				$("#sbdw1T8").text($('#hiddensbdw1T8').val());
+				$("#sbdw1T9").text($('#hiddensbdw1T9').val());
+				$("#sbdw1T10").text($('#hiddensbdw1T10').val());
+				$("#sbdw1T11").text($('#hiddensbdw1T11').val());
+				$("#sbdw1T12").text($('#hiddensbdw1T12').val());
+				$("#sbdw2T1").text($('#hiddensbdw2T1').val());
+				$("#sbdw2T2").text($('#hiddensbdw2T2').val());
+				$("#sbdw2T3").text($('#hiddensbdw2T3').val());
+				$("#sbdw2T4").text($('#hiddensbdw2T4').val());
+				$("#sbdw2T5").text($('#hiddensbdw2T5').val());
+				$("#sbdw2T6").text($('#hiddensbdw2T6').val());
+				$("#sbdw2T7").text($('#hiddensbdw2T7').val());
+				$("#sbdw2T8").text($('#hiddensbdw2T8').val());
+				$("#sbdw2T9").text($('#hiddensbdw2T9').val());
+				$("#sbdw2T10").text($('#hiddensbdw2T10').val());
+				$("#sbdw2T11").text($('#hiddensbdw2T11').val());
+				$("#sbdw2T12").text($('#hiddensbdw2T12').val());
+				$("#sbdw3T1").text($('#hiddensbdw3T1').val());
+				$("#sbdw3T2").text($('#hiddensbdw3T2').val());
+				$("#sbdw3T3").text($('#hiddensbdw3T3').val());
+				$("#sbdw3T4").text($('#hiddensbdw3T4').val());
+				$("#sbdw3T5").text($('#hiddensbdw3T5').val());
+				$("#sbdw3T6").text($('#hiddensbdw3T6').val());
+				$("#sbdw3T7").text($('#hiddensbdw3T7').val());
+				$("#sbdw3T8").text($('#hiddensbdw3T8').val());
+				$("#sbdw3T9").text($('#hiddensbdw3T9').val());
+				$("#sbdw3T10").text($('#hiddensbdw3T10').val());
+				$("#sbdw3T11").text($('#hiddensbdw3T11').val());
+				$("#sbdw3T12").text($('#hiddensbdw3T12').val());
+				
+				if(''!=$('#hiddengxtztpurl1').val())
+	            {
+	            	ui.image("gxtztp1").attr("src",$('#hiddengxtztpurl1').val());
+	            	ui.bunch('divgxtz1').show();
+	            }
+	            if(''!=$('#hiddengxtztpurl2').val())
+	            {
+	            	ui.image("gxtztp2").attr("src",$('#hiddengxtztpurl2').val());
+	            	ui.bunch('divgxtz2').show();
+	            }
+	            if(''!=$('#hiddengxtztpurl3').val())
+	            {
+	            	ui.image("gxtztp3").attr("src",$('#hiddengxtztpurl3').val());
+	            	ui.bunch('divgxtz3').show();
+	            }
+			    
+			    	
+			}
+			function querySbxx() {
+			    sbtm = $('#sbtm').val();
+			    $.ajax({
+			        type: "POST",
+			        url: ui.getRealUrl("/sbgzbjac/querySbxx"),
+			        async: false,
+			        data: {
+			            sbtm: sbtm
+			        },
+			        success: function(data) {
+			            if (data == null || data == 'null') {
+			                ui.hidden("returnnull").val("0");
+			                //ui.alert("没有查询出该设备信息");
+			            } else {
+			                ui.hidden("returnnull").val("1");
+			                // $('#sbtm').blur();
+			            }
+			        },
+			        error: function(data) {
+			            ui.alert("查询失败");
+			        }
+			    });
+			}
+			function saveGzbj() {
+			    sbtm = $('#sbtm').val();
+			    selectdj = $('#selectdj').val();
+			    selectjj = $('#selectjj').val();
+			    selectlj = $('#selectlj').val();
+			    returnnull = $('#returnnull').val();
+			    if(sbtm == ""){
+			   	 	ui.alert("请输入设备条码");
+			   	 	return;
+			    }
+			    if(returnnull != 1){
+			   	 	ui.alert("找不到该设备信息");
+			   	 	return;
+			    }
+			    if(selectdj == 0 && selectjj == 0 && selectlj == 0){
+			   	 	ui.alert("请输入报警内容");
+			   	 	return;
+			    }
+	            $.ajax({
+	                type: "POST",
+	                url: ui.getRealUrl("/sbgzbjac/saveGzbj"),
+	                async: false,
+	                data: {
+	                    sbtm: sbtm,
+	                    selectdj: selectdj,
+	                    selectjj: selectjj,
+	                    selectlj: selectlj
+	                },
+	                success: function(data) {
+	                    ui.success(data.msg, "提示");
+	                    $('#sbtm').focus();
+	                },
+	                error: function(data) {
+	                    ui.error("保存失败！");
+	                }
+	            });
+			}
+		
+		$("input:text").click(function(){
+    		$(this).select();
+		});
+	]]>
+	</attribute>
+</view>

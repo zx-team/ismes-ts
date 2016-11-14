@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="sbgzbj" title="设备故障" onReady="setDefaultFocus" context="touch">
+	<form name="form-sbgzbj" method="post" horizontal="true"
+		action="/sbgzbjac/saveSbgj" layoutconstraint="md:10;sm:10;md-offset:1;sm-offset:1">
+		<form-body>
+			<form-group sizing="large">
+			<bunch layoutconstraint="md-offset:4;sm-offset:4">
+				<bunch layoutconstraint="md:12">
+					<label for="zw11" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw12" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw13" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw14" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw15" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw16" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw17" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw18" layoutconstraint="md:2" />
+				</bunch>
+				<bunch layoutconstraint="md:12">
+					<label for="zw19" layoutconstraint="md:2" />
+				</bunch>
+			</bunch>
+		</form-group>
+			<bunch layoutconstraint="md:6">
+				<form-group sizing="large">
+					<label for="sbbh" text="设备条码：" layoutconstraint="md:4" />
+					<text name="sbbh" onchange="queryByScan" layoutconstraint="md:6" />
+				</form-group>
+				<form-group sizing="large">
+					<label for="sbmc" text="设备名称：" layoutconstraint="md:4" />
+					<text name="sbmc" readonly="true" layoutconstraint="md:6" />
+				</form-group>
+				<form-group sizing="large">
+					<label for="sblxmc" text="设备类型：" layoutconstraint="md:4" />
+					<text name="sblxmc" readonly="true" layoutconstraint="md:6" />
+					<hidden name="returnnull" value="0"></hidden>
+					<hidden name="sblxid"></hidden>
+				</form-group>
+			</bunch>
+			<bunch layoutconstraint="md:6">
+				<form-group>
+					<image name="image_sb" popshow="true" height="168" width="168">
+					</image>
+				</form-group>
+			</bunch>
+		</form-body>
+
+		<form-actions>
+			<bunch layoutconstraint="md:2;md-offset:3;sm-offset:3">
+				<button name="fh" label="返回" type="button" onClick="returnIndex"
+					sizing="large"></button>
+			</bunch>
+			<bunch layoutconstraint="md:2">
+				<button name="cz" label="重置" type="button" onClick="customreset"
+					sizing="large"></button>
+			</bunch>
+			<bunch layoutconstraint="md:2">
+				<button name="qd" label="确定" type="button" onClick="saveSbgj"
+					sizing="large"></button>
+			</bunch>
+		</form-actions>
+	</form>
+
+	<attribute name="javascript">
+		<![CDATA[
+			function queryByScan() {
+			    $("#form-sbgzbj").attr("action", "queryBySbbh");
+			    ui.form("form-sbgzbj").ajaxSubmit(function() {},
+			    function(data) {
+			        if (data == null || data == 'null') {
+			            cleanEmpty();
+			        } else {
+			        	if(data.url == null || data.url == 'null'){
+			        	} else {
+			        		ui.image("image_sb").attr("src", data.url);
+			        	}
+			            ui.text("sbmc").val(data.sbmc);
+			            ui.text("sblxmc").val(data.sblxmc);
+			            ui.hidden("sblxid").val(data.sblxid);
+			            ui.hidden("returnnull").val("1");
+			            $('#sbbh').blur();
+			        }
+			    },
+			    function(data) {
+			        ui.hidden("returnnull").val("0");
+			        ui.alert("查询失败");
+			    });
+			}
+			
+			function saveSbgj() {
+				$("#form-sbgzbj").attr("action", "saveSbgj");
+			    var btn = this;
+			    sbbh = $('#sbbh').val();
+			    returnnull = $('#returnnull').val();
+			    if(sbbh == ""){
+			    	ui.alert("请输入设备条码");
+			    	return;
+			    }
+			    if(returnnull != 1){
+			    	ui.alert("找不到该设备信息");
+			    	return;
+			    }
+		        ui.form("form-sbgzbj").ajaxSubmit(function() {
+		            //ui.success("准备提交");
+		            //btn.attr("disabled", true);
+		        },
+		        function(data) {
+		            ui.success(data.msg);
+		            ui.text("sbbh").val("");
+		            cleanEmpty();
+		            $('#sbbh').focus();
+		        },
+		        function(data) {
+		            ui.error("保存失败！");
+		            //btn.attr("disabled", false);
+		        });
+			}
+			
+			function returnIndex() {
+			    var url = ui.getRealUrl("/sbgzbjac/getFirstpage");
+			    window.location.href = url;
+			}
+			
+			function cleanEmpty() {
+			    ui.text("sbmc").val("");
+			    ui.hidden("sblxid").val("");
+			    ui.text("sblxmc").val("");
+			    $('#image_sb').attr("src", "");
+			    ui.hidden("returnnull").val("0");
+			}
+			function setDefaultFocus(){
+				hiddenqd = $('#hiddenqd').val(); 
+				$("#image_qd").attr("src", hiddenqd); 
+			
+				hiddencz = $('#hiddencz').val(); 
+				$("#image_cz").attr("src", hiddencz); 
+			
+				hiddenfh = $('#hiddenfh').val(); 
+				$("#image_fh").attr("src", hiddenfh); 
+			   $('#sbbh').focus();
+			}
+			
+		function customreset(){
+			ui.text("sbbh").val("");
+			cleanEmpty();
+			$('#sbbh').focus();
+		}
+		
+		$("input:text").click(function(){
+    		$(this).select();
+		});
+	]]>
+	</attribute>
+</view>

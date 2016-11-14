@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<category name="sblx" label="设备类型"  description="设备类型">
+	<field name="name1" value="10" label="i5"  state="valid"/>
+	<field name="name2" value="20" label="西门子"  state="valid"/>
+	<field name="name3" value="30" label="funuc"  state="valid"/>
+</category>

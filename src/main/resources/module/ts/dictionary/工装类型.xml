@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<category name="gzlx" label="工装类型"  description="工装类型">
+	<field name="10" value="10" label="刀具"  state="valid"/>
+	<field name="20" value="20" label="夹具"  state="valid"/>
+	<field name="30" value="30" label="量具"  state="valid"/>
+	<field name="60" value="60" label="刀片"  state="valid"/>
+</category>
