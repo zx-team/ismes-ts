@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <view name="homepage" title="主页面" onReady="testViewReady" context="touch">
 	<bunch layoutconstraint="md:12;sm:12;">
-		<panel layoutconstraint="md:14;sm:14;">
+		<panel layoutconstraint="md:12;sm:12;">
 			<panel-body>
-				<button name="zjBtn"   label="质检"      type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;" onClick="zjOnClick"></button>
+				<button name="zjBtn"   label="质检"      type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;md-offset:1;" onClick="zjOnClick"></button>
 				<button name="wlsdBtn" label="物料送达"  type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;" onClick="wlsdOnClick"></button>
 				<button name="gzsdBtn" label="工装送达"  type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;" onClick="gzsdOnClick"></button>
 				<button name="bkgBtn"  label="报开工"    type="button" sizing="small" context="primary" layoutconstraint="md:1;sm:1;" onClick="bkgOnClick"></button>
@@ -18,19 +18,19 @@
 			<bunch layoutconstraint="md:4;sm:4;">
 				<panel layoutconstraint="md:12;sm:12;">
 					<panel-body>
-						<plaintext layoutconstraint="md:5;sm:5" text="零件名称:" type="strong" lead="true" />
-						<plaintext name="zljmc"  layoutconstraint="md:7;sm:7"  text="无" type="strong" lead="true"  bind="pics.zljmc"/>
-						<plaintext text="工序名称:" layoutconstraint="md:5;sm:5" type="strong" lead="true" />
-						<plaintext name="zgxzmc"  layoutconstraint="md:7;sm:7"  text="无" type="strong" lead="true" bind="pics.zgxzmc"/>
-						<plaintext text="流程卡号:" layoutconstraint="md:5;sm:5" type="strong" lead="true" />
-						<plaintext name="zlckh"  layoutconstraint="md:7;sm:7"  text="无" type="strong" lead="true"  bind="pics.zlckh"/>
-						<plaintext text="完工情况:" layoutconstraint="md:5;sm:5" type="strong" lead="true" />
-						<plaintext name="zwcsl"  layoutconstraint="md:7;sm:7"  text="无" type="strong" lead="true"  bind="pics.zwcsl"/>
+						<plaintext layoutconstraint="md:5;sm:5" text="零件名称:" type="strong"  />
+						<plaintext name="zljmc"  layoutconstraint="md:7;sm:7"  text="无"  bind="pics.zljmc"/>
+						<plaintext text="工序名称:" layoutconstraint="md:5;sm:5" type="strong"  />
+						<plaintext name="zgxzmc"  layoutconstraint="md:7;sm:7"  text="无"  bind="pics.zgxzmc"/>
+						<plaintext text="流程卡号:" layoutconstraint="md:5;sm:5" type="strong"  />
+						<plaintext name="zlckh"  layoutconstraint="md:7;sm:7"  text="无"   bind="pics.zlckh"/>
+						<plaintext text="完工情况:" layoutconstraint="md:5;sm:5" type="strong"  />
+						<plaintext name="zwcsl"  layoutconstraint="md:7;sm:7"  text="无"  bind="pics.zwcsl"/>
 					</panel-body>
 				</panel>
-				<plaintext layoutconstraint="md:3;sm:3" text="今天:" type="strong" lead="true" />
-				<plaintext name="jt"  layoutconstraint="md:9;sm:9"  type="strong" lead="true"  bind="pics.sjto"  format="YYYY年MM月dd日"/>
-				<table name="table_gdxx" scroll="false" height="160" url="table_gdxxjt" 
+				<plaintext layoutconstraint="md:3;sm:3" text="今天:" type="strong"  />
+				<plaintext name="jt"  layoutconstraint="md:9;sm:9"  bind="pics.sjto"  format="YYYY年MM月dd日"/>
+				<table name="table_gdxx" scroll="false" minheight="160" url="table_gdxxjt" 
 					layoutconstraint="md:15;sm:15;"  showpager="false" pagesize="3">
 					<column label="零件名称" name="ljmc"></column>
 					<column label="零件ID" name="id" key="true" hidden="true"></column>
@@ -111,92 +111,144 @@
 					<hidden name="hiddengxtztpurl2" bind="pics.gxtztpurl2"></hidden>
 					<hidden name="hiddengxtztpurl3" bind="pics.gxtztpurl3"></hidden>
 				</bunch>
-				<plaintext layoutconstraint="md:3;sm:3" text="明天:" type="strong" lead="true" />
-				<plaintext name="mt"  layoutconstraint="md:9;sm:9"   type="strong" lead="true"  bind="pics.sjtm"  format="YYYY年MM月dd日"/>
-				<table name="table_gdxxmt" scroll="false" height="120"  url="table_gdxxmt"  layoutconstraint="md:12;sm:12;"  showpager="false"  pagesize="2">
+				<plaintext layoutconstraint="md:3;sm:3" text="明天:" type="strong"  />
+				<plaintext name="mt"  layoutconstraint="md:9;sm:9"   bind="pics.sjtm"  format="YYYY年MM月dd日"/>
+				<table name="table_gdxxmt" scroll="false" minheight="120"  url="table_gdxxmt"  layoutconstraint="md:12;sm:12;"  showpager="false"  pagesize="2">
 					<column label="零件名称" name="ljmc"></column>
 					<column label="零件ID" name="id" key="true" hidden="true"></column>
 					<column label="流程卡号" name="xh" width="200"></column>
 					<column label="加工数量" name="jgsl"></column>
 				</table>
 				<bunch layoutconstraint="md:12;sm:12;">
-					<plaintext layoutconstraint="md:6;sm:6" text="刀具寿命:" type="strong" lead="true"/>
+					<plaintext layoutconstraint="md:6;sm:6" text="刀具寿命:" type="strong" />
 				</bunch>
 				<bunch layoutconstraint="md:12;sm:12;">
-					<button  name="sbmc1" label="0" href="javascript:void(0);" onClick="sbmcclick1"	context="link" layoutconstraint="md:3;sm:3;" sizing="large" ></button>
-					<button  name="sbmc2" label="0" href="javascript:void(0);" onClick="sbmcclick2"	context="link" layoutconstraint="md:3;sm:3;" sizing="large"></button>
-					<button  name="sbmc3" label="0" href="javascript:void(0);" onClick="sbmcclick3" context="link" layoutconstraint="md:3;sm:3;" sizing="large"></button>
+					<button  name="sbmc1" label="" href="javascript:void(0);" onClick="sbmcclick1"	context="link" layoutconstraint="md:3;sm:3;" sizing="large" ></button>
+					<button  name="sbmc2" label="" href="javascript:void(0);" onClick="sbmcclick2"	context="link" layoutconstraint="md:3;sm:3;" sizing="large"></button>
+					<button  name="sbmc3" label="" href="javascript:void(0);" onClick="sbmcclick3" context="link" layoutconstraint="md:3;sm:3;" sizing="large"></button>
 				</bunch>
 				
 				<bunch layoutconstraint="md:12;sm:12;" name="divdjsm1" >
 					<bunch layoutconstraint="md:12;sm:12;">
-						<plaintext layoutconstraint="md:2;sm:2" text="T1" type="strong" lead="true"/><button  name="sbdw1T1" label="0" href="javascript:void(0);" onClick="djsmql1"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<!-- <plaintext layoutconstraint="md:2;sm:2" text="T1" type="strong" lead="true"/><button  name="sbdw1T1" label="0" href="javascript:void(0);" onClick="djsmql1"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
 						<plaintext layoutconstraint="md:2;sm:2" text="T2" type="strong" lead="true"/><button  name="sbdw1T2" label="0" href="javascript:void(0);" onClick="djsmql2"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
-						<plaintext layoutconstraint="md:2;sm:2" text="T3" type="strong" lead="true"/><button  name="sbdw1T3" label="0" href="javascript:void(0);" onClick="djsmql3"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T3" type="strong" lead="true"/><button  name="sbdw1T3" label="0" href="javascript:void(0);" onClick="djsmql3"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button> -->
+					
+						<plaintext layoutconstraint="md:2;sm:2" text="T1" type="strong" lead="true"/><link name="sbdw1T1" url="javascript:void(0);" onClick="djsmql1" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T2" type="strong" lead="true"/><link name="sbdw1T2" url="javascript:void(0);" onClick="djsmql2" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T3" type="strong" lead="true"/><link name="sbdw1T3" url="javascript:void(0);" onClick="djsmql3" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						
 					</bunch>
 					<bunch layoutconstraint="md:12;sm:12;">	
-						<plaintext layoutconstraint="md:2;sm:2" text="T4" type="strong" lead="true"/><button  name="sbdw1T4" label="0" href="javascript:void(0);" onClick="djsmql4"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<!-- <plaintext layoutconstraint="md:2;sm:2" text="T4" type="strong" lead="true"/><button  name="sbdw1T4" label="0" href="javascript:void(0);" onClick="djsmql4"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
 						<plaintext layoutconstraint="md:2;sm:2" text="T5" type="strong" lead="true"/><button  name="sbdw1T5" label="0" href="javascript:void(0);" onClick="djsmql5"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
 						<plaintext layoutconstraint="md:2;sm:2" text="T6" type="strong" lead="true"/><button  name="sbdw1T6" label="0" href="javascript:void(0);" onClick="djsmql6"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						 -->
+						<plaintext layoutconstraint="md:2;sm:2" text="T4" type="strong" lead="true"/><link name="sbdw1T4" url="javascript:void(0);" onClick="djsmql4" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T5" type="strong" lead="true"/><link name="sbdw1T5" url="javascript:void(0);" onClick="djsmql5" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T6" type="strong" lead="true"/><link name="sbdw1T6" url="javascript:void(0);" onClick="djsmql6" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
 					</bunch>
 					<bunch layoutconstraint="md:12;sm:12;">	
-						<plaintext layoutconstraint="md:2;sm:2" text="T7" type="strong" lead="true"/><button  name="sbdw1T7" label="0" href="javascript:void(0);" onClick="djsmql7"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<!-- <plaintext layoutconstraint="md:2;sm:2" text="T7" type="strong" lead="true"/><button  name="sbdw1T7" label="0" href="javascript:void(0);" onClick="djsmql7"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
 						<plaintext layoutconstraint="md:2;sm:2" text="T8" type="strong" lead="true"/><button  name="sbdw1T8" label="0" href="javascript:void(0);" onClick="djsmql8"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
-						<plaintext layoutconstraint="md:2;sm:2" text="T9" type="strong" lead="true"/><button  name="sbdw1T9" label="0" href="javascript:void(0);" onClick="djsmql9"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T9" type="strong" lead="true"/><button  name="sbdw1T9" label="0" href="javascript:void(0);" onClick="djsmql9"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button> -->
+					
+						<plaintext layoutconstraint="md:2;sm:2" text="T7" type="strong" lead="true"/><link name="sbdw1T7" url="javascript:void(0);" onClick="djsmql7" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T8" type="strong" lead="true"/><link name="sbdw1T8" url="javascript:void(0);" onClick="djsmql8" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T9" type="strong" lead="true"/><link name="sbdw1T9" url="javascript:void(0);" onClick="djsmql9" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
 					</bunch>
 					<bunch layoutconstraint="md:12;sm:12;">	
-						<plaintext layoutconstraint="md:2;sm:2" text="T10" type="strong" lead="true"/><button  name="sbdw1T10" label="0" href="javascript:void(0);" onClick="djsmql10"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<!-- <plaintext layoutconstraint="md:2;sm:2" text="T10" type="strong" lead="true"/><button  name="sbdw1T10" label="0" href="javascript:void(0);" onClick="djsmql10"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
 						<plaintext layoutconstraint="md:2;sm:2" text="T11" type="strong" lead="true"/><button  name="sbdw1T11" label="0" href="javascript:void(0);" onClick="djsmql11"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
 						<plaintext layoutconstraint="md:2;sm:2" text="T12" type="strong" lead="true"/><button  name="sbdw1T12" label="0" href="javascript:void(0);" onClick="djsmql12"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+					 -->
+						<plaintext layoutconstraint="md:2;sm:2" text="T10" type="strong" lead="true"/><link name="sbdw1T10" url="javascript:void(0);" onClick="djsmql10" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T11" type="strong" lead="true"/><link name="sbdw1T11" url="javascript:void(0);" onClick="djsmql11" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T12" type="strong" lead="true"/><link name="sbdw1T12" url="javascript:void(0);" onClick="djsmql12" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
 					</bunch>
 				</bunch>
 				<bunch layoutconstraint="md:12;sm:12;" name="divdjsm2" hidden="true">
 					<bunch layoutconstraint="md:12;sm:12;">
-						<plaintext layoutconstraint="md:2;sm:2" text="T1" type="strong" lead="true"/><button  name="sbdw2T1" label="0" href="javascript:void(0);" onClick="djsmql1"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<!-- <plaintext layoutconstraint="md:2;sm:2" text="T1" type="strong" lead="true"/><button  name="sbdw2T1" label="0" href="javascript:void(0);" onClick="djsmql1"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
 						<plaintext layoutconstraint="md:2;sm:2" text="T2" type="strong" lead="true"/><button  name="sbdw2T2" label="0" href="javascript:void(0);" onClick="djsmql2"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
 						<plaintext layoutconstraint="md:2;sm:2" text="T3" type="strong" lead="true"/><button  name="sbdw2T3" label="0" href="javascript:void(0);" onClick="djsmql3"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+					 -->
+						<plaintext layoutconstraint="md:2;sm:2" text="T1" type="strong" lead="true"/><link name="sbdw2T1" url="javascript:void(0);" onClick="djsmql1" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T2" type="strong" lead="true"/><link name="sbdw2T2" url="javascript:void(0);" onClick="djsmql2" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T3" type="strong" lead="true"/><link name="sbdw2T3" url="javascript:void(0);" onClick="djsmql3" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						
 					</bunch>
 					<bunch layoutconstraint="md:12;sm:12;">	
-						<plaintext layoutconstraint="md:2;sm:2" text="T4" type="strong" lead="true"/><button  name="sbdw2T4" label="0" href="javascript:void(0);" onClick="djsmql4"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<!-- <plaintext layoutconstraint="md:2;sm:2" text="T4" type="strong" lead="true"/><button  name="sbdw2T4" label="0" href="javascript:void(0);" onClick="djsmql4"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
 						<plaintext layoutconstraint="md:2;sm:2" text="T5" type="strong" lead="true"/><button  name="sbdw2T5" label="0" href="javascript:void(0);" onClick="djsmql5"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
 						<plaintext layoutconstraint="md:2;sm:2" text="T6" type="strong" lead="true"/><button  name="sbdw2T6" label="0" href="javascript:void(0);" onClick="djsmql6"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+					 -->
+						<plaintext layoutconstraint="md:2;sm:2" text="T4" type="strong" lead="true"/><link name="sbdw2T4" url="javascript:void(0);" onClick="djsmql4" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T5" type="strong" lead="true"/><link name="sbdw2T5" url="javascript:void(0);" onClick="djsmql5" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T6" type="strong" lead="true"/><link name="sbdw2T6" url="javascript:void(0);" onClick="djsmql6" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
 					</bunch>
 					<bunch layoutconstraint="md:12;sm:12;">	
-						<plaintext layoutconstraint="md:2;sm:2" text="T7" type="strong" lead="true"/><button  name="sbdw2T7" label="0" href="javascript:void(0);" onClick="djsmql7"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<!-- <plaintext layoutconstraint="md:2;sm:2" text="T7" type="strong" lead="true"/><button  name="sbdw2T7" label="0" href="javascript:void(0);" onClick="djsmql7"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
 						<plaintext layoutconstraint="md:2;sm:2" text="T8" type="strong" lead="true"/><button  name="sbdw2T8" label="0" href="javascript:void(0);" onClick="djsmql8"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
 						<plaintext layoutconstraint="md:2;sm:2" text="T9" type="strong" lead="true"/><button  name="sbdw2T9" label="0" href="javascript:void(0);" onClick="djsmql9"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+				 -->
+						<plaintext layoutconstraint="md:2;sm:2" text="T7" type="strong" lead="true"/><link name="sbdw2T7" url="javascript:void(0);" onClick="djsmql7" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T8" type="strong" lead="true"/><link name="sbdw2T8" url="javascript:void(0);" onClick="djsmql8" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T9" type="strong" lead="true"/><link name="sbdw2T9" url="javascript:void(0);" onClick="djsmql9" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
 					</bunch>
 					<bunch layoutconstraint="md:12;sm:12;">	
-						<plaintext layoutconstraint="md:2;sm:2" text="T10" type="strong" lead="true"/><button  name="sbdw2T10" label="0" href="javascript:void(0);" onClick="djsmql10"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<!-- <plaintext layoutconstraint="md:2;sm:2" text="T10" type="strong" lead="true"/><button  name="sbdw2T10" label="0" href="javascript:void(0);" onClick="djsmql10"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
 						<plaintext layoutconstraint="md:2;sm:2" text="T11" type="strong" lead="true"/><button  name="sbdw2T11" label="0" href="javascript:void(0);" onClick="djsmql11"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
-						<plaintext layoutconstraint="md:2;sm:2" text="T12" type="strong" lead="true"/><button  name="sbdw2T12" label="0" href="javascript:void(0);" onClick="djsmql12"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T12" type="strong" lead="true"/><button  name="sbdw2T12" label="0" href="javascript:void(0);" onClick="djsmql12"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button> -->
+					
+						<plaintext layoutconstraint="md:2;sm:2" text="T10" type="strong" lead="true"/><link name="sbdw2T10" url="javascript:void(0);" onClick="djsmql10" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T11" type="strong" lead="true"/><link name="sbdw2T11" url="javascript:void(0);" onClick="djsmql11" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T12" type="strong" lead="true"/><link name="sbdw2T12" url="javascript:void(0);" onClick="djsmql12" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+					
 					</bunch>
 				</bunch>
 				<bunch layoutconstraint="md:12;sm:12;" name="divdjsm3" hidden="true">
 					<bunch layoutconstraint="md:12;sm:12;">
-						<plaintext layoutconstraint="md:2;sm:2" text="T1" type="strong" lead="true"/><button  name="sbdw3T1" label="0" href="javascript:void(0);" onClick="djsmql1"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<!-- <plaintext layoutconstraint="md:2;sm:2" text="T1" type="strong" lead="true"/><button  name="sbdw3T1" label="0" href="javascript:void(0);" onClick="djsmql1"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
 						<plaintext layoutconstraint="md:2;sm:2" text="T2" type="strong" lead="true"/><button  name="sbdw3T2" label="0" href="javascript:void(0);" onClick="djsmql2"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
-						<plaintext layoutconstraint="md:2;sm:2" text="T3" type="strong" lead="true"/><button  name="sbdw3T3" label="0" href="javascript:void(0);" onClick="djsmql3"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T3" type="strong" lead="true"/><button  name="sbdw3T3" label="0" href="javascript:void(0);" onClick="djsmql3"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button> -->
+					
+						<plaintext layoutconstraint="md:2;sm:2" text="T1" type="strong" lead="true"/><link name="sbdw3T1" url="javascript:void(0);" onClick="djsmql1" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T2" type="strong" lead="true"/><link name="sbdw3T2" url="javascript:void(0);" onClick="djsmql2" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T3" type="strong" lead="true"/><link name="sbdw3T3" url="javascript:void(0);" onClick="djsmql3" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
 					</bunch>
 					<bunch layoutconstraint="md:12;sm:12;">	
-						<plaintext layoutconstraint="md:2;sm:2" text="T4" type="strong" lead="true"/><button  name="sbdw3T4" label="0" href="javascript:void(0);" onClick="djsmql4"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<!-- <plaintext layoutconstraint="md:2;sm:2" text="T4" type="strong" lead="true"/><button  name="sbdw3T4" label="0" href="javascript:void(0);" onClick="djsmql4"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
 						<plaintext layoutconstraint="md:2;sm:2" text="T5" type="strong" lead="true"/><button  name="sbdw3T5" label="0" href="javascript:void(0);" onClick="djsmql5"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
 						<plaintext layoutconstraint="md:2;sm:2" text="T6" type="strong" lead="true"/><button  name="sbdw3T6" label="0" href="javascript:void(0);" onClick="djsmql6"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+					 -->
+						<plaintext layoutconstraint="md:2;sm:2" text="T4" type="strong" lead="true"/><link name="sbdw3T4" url="javascript:void(0);" onClick="djsmql4" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T5" type="strong" lead="true"/><link name="sbdw3T5" url="javascript:void(0);" onClick="djsmql5" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T6" type="strong" lead="true"/><link name="sbdw3T6" url="javascript:void(0);" onClick="djsmql6" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+					
 					</bunch>
 					<bunch layoutconstraint="md:12;sm:12;">	
-						<plaintext layoutconstraint="md:2;sm:2" text="T7" type="strong" lead="true"/><button  name="sbdw3T7" label="0" href="javascript:void(0);" onClick="djsmql7"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<!-- <plaintext layoutconstraint="md:2;sm:2" text="T7" type="strong" lead="true"/><button  name="sbdw3T7" label="0" href="javascript:void(0);" onClick="djsmql7"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
 						<plaintext layoutconstraint="md:2;sm:2" text="T8" type="strong" lead="true"/><button  name="sbdw3T8" label="0" href="javascript:void(0);" onClick="djsmql8"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
-						<plaintext layoutconstraint="md:2;sm:2" text="T9" type="strong" lead="true"/><button  name="sbdw3T9" label="0" href="javascript:void(0);" onClick="djsmql9"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T9" type="strong" lead="true"/><button  name="sbdw3T9" label="0" href="javascript:void(0);" onClick="djsmql9"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button> -->
+					
+						<plaintext layoutconstraint="md:2;sm:2" text="T7" type="strong" lead="true"/><link name="sbdw3T7" url="javascript:void(0);" onClick="djsmql7" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T8" type="strong" lead="true"/><link name="sbdw3T8" url="javascript:void(0);" onClick="djsmql8" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T9" type="strong" lead="true"/><link name="sbdw3T9" url="javascript:void(0);" onClick="djsmql9" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
 					</bunch>
 					<bunch layoutconstraint="md:12;sm:12;">	
-						<plaintext layoutconstraint="md:2;sm:2" text="T10" type="strong" lead="true"/><button  name="sbdw3T10" label="0" href="javascript:void(0);" onClick="djsmql10"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<!-- <plaintext layoutconstraint="md:2;sm:2" text="T10" type="strong" lead="true"/><button  name="sbdw3T10" label="0" href="javascript:void(0);" onClick="djsmql10"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
 						<plaintext layoutconstraint="md:2;sm:2" text="T11" type="strong" lead="true"/><button  name="sbdw3T11" label="0" href="javascript:void(0);" onClick="djsmql11"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
-						<plaintext layoutconstraint="md:2;sm:2" text="T12" type="strong" lead="true"/><button  name="sbdw3T12" label="0" href="javascript:void(0);" onClick="djsmql12"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button>
+						<plaintext layoutconstraint="md:2;sm:2" text="T12" type="strong" lead="true"/><button  name="sbdw3T12" label="0" href="javascript:void(0);" onClick="djsmql12"	context="link" layoutconstraint="md:2;sm:2;" sizing="large"></button> -->
+					
+						<plaintext layoutconstraint="md:2;sm:2" text="T10" type="strong" lead="true"/><link name="sbdw3T10" url="javascript:void(0);" onClick="djsmql10" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T11" type="strong" lead="true"/><link name="sbdw3T11" url="javascript:void(0);" onClick="djsmql11" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
+						<plaintext layoutconstraint="md:2;sm:2" text="T12" type="strong" lead="true"/><link name="sbdw3T12" url="javascript:void(0);" onClick="djsmql12" layoutconstraint="md:2;sm:2" text="0" type="strong" lead="true" context = "info"/>
 					</bunch>
 				</bunch>
 				
 				<bunch layoutconstraint="md:12;sm:12;">
-					<plaintext layoutconstraint="md:6;sm:6" text="本日巡检:" type="strong" lead="true"/>
+					<plaintext layoutconstraint="md:6;sm:6" text="本日巡检:" type="strong" />
 				</bunch>
 				<bunch layoutconstraint="md:12;sm:12;">
 					<bunch layoutconstraint="md:4;sm:4">
@@ -206,7 +258,7 @@
 						<bunch layoutconstraint="md:6;sm:6">
 							<image name="image_xj021" popshow="false" height="50"  width="50"  ></image>
 						</bunch>
-						<plaintext layoutconstraint="md:12;sm:12;" text="08:00" type="strong" lead="true" align = "center"  bind="pics.xjsj01"/>
+						<plaintext layoutconstraint="md:12;sm:12;" text="08:00" type="strong"  align = "center"  bind="pics.xjsj01"/>
 					</bunch>
 					<bunch layoutconstraint="md:4;sm:4">
 						<bunch layoutconstraint="md:6;sm:6">
@@ -215,7 +267,7 @@
 						<bunch layoutconstraint="md:6;sm:6">
 							<image name="image_xj022" popshow="false" height="50"  width="50"></image>
 						</bunch>
-						<plaintext layoutconstraint="md:12;sm:12;" text="10:00" type="strong" lead="true" align = "center"  bind="pics.xjsj02"/>
+						<plaintext layoutconstraint="md:12;sm:12;" text="10:00" type="strong"  align = "center"  bind="pics.xjsj02"/>
 					</bunch>
 					<bunch layoutconstraint="md:4;sm:4">
 						<bunch layoutconstraint="md:6;sm:6">
@@ -224,7 +276,7 @@
 						<bunch layoutconstraint="md:6;sm:6">
 							<image name="image_xj023" popshow="false" height="50"  width="50"></image>
 						</bunch>
-						<plaintext layoutconstraint="md:12;sm:12;" text="12:00" type="strong" lead="true" align = "center"  bind="pics.xjsj03"/>
+						<plaintext layoutconstraint="md:12;sm:12;" text="12:00" type="strong"  align = "center"  bind="pics.xjsj03"/>
 					</bunch>
 				</bunch>
 				<bunch layoutconstraint="md:12;sm:12;">
@@ -235,7 +287,7 @@
 						<bunch layoutconstraint="md:6;sm:6">
 							<image name="image_xj024" popshow="false" height="50"  width="50"></image>
 						</bunch>
-						<plaintext layoutconstraint="md:12;sm:12;" text="14:00" type="strong" lead="true" align = "center" bind="pics.xjsj04"/>
+						<plaintext layoutconstraint="md:12;sm:12;" text="14:00" type="strong"  align = "center" bind="pics.xjsj04"/>
 					</bunch>
 					<bunch layoutconstraint="md:4;sm:4">
 						<bunch layoutconstraint="md:6;sm:6">
@@ -244,7 +296,7 @@
 						<bunch layoutconstraint="md:6;sm:6">
 							<image name="image_xj025" popshow="false" height="50"  width="50"></image>
 						</bunch>
-						<plaintext layoutconstraint="md:12;sm:12;" text="16:00" type="strong" lead="true" align = "center" bind="pics.xjsj05"/>
+						<plaintext layoutconstraint="md:12;sm:12;" text="16:00" type="strong" align = "center" bind="pics.xjsj05"/>
 					</bunch>
 					<bunch layoutconstraint="md:4;sm:4">
 						<bunch layoutconstraint="md:6;sm:6">
@@ -253,7 +305,7 @@
 						<bunch layoutconstraint="md:6;sm:6">
 							<image name="image_xj026" popshow="false" height="50"  width="50"></image>
 						</bunch>
-						<plaintext layoutconstraint="md:12;sm:12;" text="18:00" type="strong" lead="true" align = "center"  bind="pics.xjsj06"/>
+						<plaintext layoutconstraint="md:12;sm:12;" text="18:00" type="strong" align = "center"  bind="pics.xjsj06"/>
 					</bunch>
 				</bunch>
 				<bunch layoutconstraint="md:12;sm:12;">
@@ -264,7 +316,7 @@
 						<bunch layoutconstraint="md:6;sm:6">
 							<image name="image_xj027" popshow="false" height="50"  width="50"></image>
 						</bunch>
-						<plaintext layoutconstraint="md:12;sm:12;" text="20:00" type="strong" lead="true" align = "center" bind="pics.xjsj07"/>
+						<plaintext layoutconstraint="md:12;sm:12;" text="20:00" type="strong"  align = "center" bind="pics.xjsj07"/>
 					</bunch>
 					<bunch layoutconstraint="md:4;sm:4">
 						<bunch layoutconstraint="md:6;sm:6">
@@ -273,7 +325,7 @@
 						<bunch layoutconstraint="md:6;sm:6">
 							<image name="image_xj028" popshow="false" height="50"  width="50"></image>
 						</bunch>
-						<plaintext layoutconstraint="md:12;sm:12;" text="22:00" type="strong" lead="true" align = "center" bind="pics.xjsj08"/>
+						<plaintext layoutconstraint="md:12;sm:12;" text="22:00" type="strong" align = "center" bind="pics.xjsj08"/>
 					</bunch>
 					<bunch layoutconstraint="md:4;sm:4">
 						<bunch layoutconstraint="md:6;sm:6">
@@ -282,7 +334,7 @@
 						<bunch layoutconstraint="md:6;sm:6">
 							<image name="image_xj029" popshow="false" height="50"  width="50"></image>
 						</bunch>
-						<plaintext layoutconstraint="md:12;sm:12;" text="00:00" type="strong" lead="true" align = "center" bind="pics.xjsj09"/>
+						<plaintext layoutconstraint="md:12;sm:12;" text="00:00" type="strong"  align = "center" bind="pics.xjsj09"/>
 					</bunch>
 				</bunch>
 			</bunch>	 
@@ -358,7 +410,7 @@
 											<text name="zjry"  layoutconstraint="md:8" />
 										</form-group>
 									</bunch>
-									<table name="table_zj" scroll="false" minheight="300"  url="table_zjxx" autoload="false" onSelectRow="table_ZJClickrow"  layoutconstraint="md:12;sm:12;"  showpager="false"  multiselect="true">
+									<table name="table_zj" scroll="false" minheight="300"  pagesize = "200" url="table_zjxx" autoload="false" onSelectRow="table_ZJClickrow"  layoutconstraint="md:12;sm:12;"  showpager="false"  multiselect="true">
 										<column label="编号" name="zjxh"></column>
 										<column label="质检ID" name="gxzjxlrid" key="true" hidden="true"></column>
 										<column label="类型" name="zjbzlx" ></column>
@@ -443,12 +495,12 @@
 									</form-group> -->
 									<form-group sizing="large">
 										<label for="sl" text="送达数量：" layoutconstraint="md:3" />
-										<keyboard name="sl" type="custom" layoutconstraint="md:8" sizing="large" validate="{min:0,number:true,digits:true}">
+										<keyboard name="sl" type="custom" layoutconstraint="md:8" sizing="large" validate="{min:0,number:true}">
 											<keyset name="normal">
 												<attribute name="value">
 												<![CDATA[
 													'1 2 3 4 5 6 ',
-													  '7 8 9 0 . Φ',
+													  '7 8 9 0 ',
 													  '{bksp} {clear} {cancel}'
 												]]>
 												</attribute>
@@ -507,20 +559,20 @@
 								<bunch layoutconstraint="md:12;sm:12;" name = "divbg" hidden="true">
 									<form-group sizing="large">
 										<label for="ncbgsl" text="NC报工数量：" layoutconstraint="md:3" />
-										<text name="ncbgsl" layoutconstraint="md:8" readonly="true" validate="{min:0,number:true,digits:true}" />
+										<text name="ncbgsl" layoutconstraint="md:8" readonly="true" validate="{min:0,number:true}" />
 									</form-group>
 									<form-group sizing="large">
 										<label for="ybgsl" text="已报工数量：" layoutconstraint="md:3" />
-										<text name="ybgsl" layoutconstraint="md:8" readonly="true" validate="{min:0,number:true,digits:true}" />
+										<text name="ybgsl" layoutconstraint="md:8" readonly="true" validate="{min:0,number:true}" />
 									</form-group>
 									<form-group sizing="large">
 										<label for="bgsl" text="合格数量：" layoutconstraint="md:3" />
-										<keyboard name="bgsl" type="custom" layoutconstraint="md:8" sizing="large" validate="{min:0,number:true,digits:true}">
+										<keyboard name="bgsl" type="custom" layoutconstraint="md:8" sizing="large" validate="{min:0,number:true}">
 											<keyset name="normal">
 												<attribute name="value">
 												<![CDATA[
 													'1 2 3 4 5 6 ',
-													  '7 8 9 0 . Φ',
+													  '7 8 9 0 ',
 													  '{bksp} {clear} {cancel}'
 												]]>
 												</attribute>
@@ -529,12 +581,12 @@
 									</form-group>
 									<form-group sizing="large">
 										<label for="bfgf" text="工废数量：" layoutconstraint="md:3" />
-										<keyboard name="bfgf" type="custom" layoutconstraint="md:8" sizing="large" validate="{min:0,number:true,digits:true}">
+										<keyboard name="bfgf" type="custom" layoutconstraint="md:8" sizing="large" validate="{min:0,number:true}">
 											<keyset name="normal">
 												<attribute name="value">
 												<![CDATA[
 													'1 2 3 4 5 6 ',
-													  '7 8 9 0 . Φ',
+													  '7 8 9 0 ',
 													  '{bksp} {clear} {cancel}'
 												]]>
 												</attribute>
@@ -543,12 +595,12 @@
 									</form-group>
 									<form-group sizing="large">
 										<label for="bflf" text="料废数量：" layoutconstraint="md:3" />
-										<keyboard name="bflf" type="custom" layoutconstraint="md:8" sizing="large" validate="{min:0,number:true,digits:true}">
+										<keyboard name="bflf" type="custom" layoutconstraint="md:8" sizing="large" validate="{min:0,number:true}">
 											<keyset name="normal">
 												<attribute name="value">
 												<![CDATA[
 													'1 2 3 4 5 6 ',
-													  '7 8 9 0 . Φ',
+													  '7 8 9 0 ',
 													  '{bksp} {clear} {cancel}'
 												]]>
 												</attribute>
@@ -558,7 +610,7 @@
 									<bunch   hidden="true">
 										<form-group sizing="large">
 											<label for="bfsl" text="报废数量：" layoutconstraint="md:3" />
-											<text name="bfsl" layoutconstraint="md:8" validate="{min:0,digits:true}" />
+											<text name="bfsl" layoutconstraint="md:8" validate="{min:0}" />
 										</form-group>
 									</bunch>
 								</bunch>
@@ -1042,23 +1094,30 @@
 				djsmql();
 			}
 			function djsmql() {
-				$.ajax({
-	                type: "POST",
-	                url: ui.getRealUrl("/sbgzbjac/djsmql"),
-	                async: false,
-	                data: {
-	                    sbid: ui.hidden("hiddenzsbid").val(),
-	                    dw: ui.hidden("zdw").val()
-	                },
-	                success: function(data) {
-	                
-	               		$('#sbdw'+sbdjymbz+ui.hidden('zdw').val()).text(0);
-	                    ui.success("清零成功", "提示");
-	                },
-	                error: function(data) {
-	                    ui.error("清零失败！");
-	                }
-	            });
+			
+				var dw =   ui.hidden("zdw").val();
+				ui.confirm("您是否要归零" + dw + "刀位刀片的使用次数？", function(flag){
+					if(flag){
+						$.ajax({
+			                type: "POST",
+			                url: ui.getRealUrl("/sbgzbjac/djsmql"),
+			                async: false,
+			                data: {
+			                    sbid: ui.hidden("hiddenzsbid").val(),
+			                    dw: dw
+			                },
+			                success: function(data) {
+			                
+			               		$('#sbdw'+sbdjymbz+ui.hidden('zdw').val()).text(0);
+			                    ui.success("清零成功", "提示");
+			                },
+			                error: function(data) {
+			                    ui.error("清零失败！");
+			                }
+			            });
+					}
+				});			
+				
 			}
 			
 		

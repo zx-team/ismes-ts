@@ -1294,7 +1294,7 @@ public class SbgzbjActivity {
 		String ljbh = parameters.getString("ljbh");
 		String ljmc = parameters.getString("ljmc");
 		String ljid = parameters.getString("ljid");
-//		String gxmc = parameters.getString("gxmc");
+		String gxmc = parameters.getString("gxmc");
 		String sbbh = parameters.getString("sbbh");
 		String jgsl = parameters.getString("jgsl");
 		String jhkssj = parameters.getString("jhkssj");
@@ -1303,7 +1303,7 @@ public class SbgzbjActivity {
 		String sbwz = parameters.getString("sbwz");
 		String ncbgsl = parameters.getString("ncbgsl");
 		
-		parameters.set("zybh", gdhwltm);
+		parameters.set("zybh", gdhwltm+""+gxmc);
 		parameters.set("pcbh", pcbh);
 		parameters.set("wlbh", wlbh);
 		parameters.set("wlmc", wlmc);
